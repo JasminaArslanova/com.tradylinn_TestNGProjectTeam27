@@ -33,8 +33,7 @@ public class US003 {
         try {
             trady.girisYapButonu.click();
         } catch (Exception e) {
-            JavascriptExecutor executor = (JavascriptExecutor) Driver.getDriver();
-            executor.executeScript("arguments[0].click();", trady.girisYapButonu);
+            js.executeScript("arguments[0].click();", trady.girisYapButonu);
         }
         try {
             Thread.sleep(2000);
@@ -45,15 +44,13 @@ public class US003 {
         try {
             trady.siparislerButonu.click();
         } catch (Exception e) {
-            JavascriptExecutor executor = (JavascriptExecutor) Driver.getDriver();
-            executor.executeScript("arguments[0].click();", trady.siparislerButonu);
+            js.executeScript("arguments[0].click();", trady.siparislerButonu);
         }
         Assert.assertTrue(trady.siparislerText.isDisplayed());
         try {
             trady.urunlereGozAtButtonu.click();
         } catch (Exception e) {
-            JavascriptExecutor executor = (JavascriptExecutor) Driver.getDriver();
-            executor.executeScript("arguments[0].click();", trady.urunlereGozAtButtonu);
+            js.executeScript("arguments[0].click();", trady.urunlereGozAtButtonu);
         }
         Assert.assertTrue(trady.magazaText.isDisplayed());
     }
