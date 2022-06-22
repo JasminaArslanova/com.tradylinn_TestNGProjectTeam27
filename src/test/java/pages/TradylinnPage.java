@@ -11,4 +11,5 @@ public TradylinnPage(){PageFactory.initElements(Driver.getDriver(),this);}
     //Jasmina
     @FindBy(linkText="Hesabım")
     public WebElement hesabimlinktext;
+    // ramazan
 }
