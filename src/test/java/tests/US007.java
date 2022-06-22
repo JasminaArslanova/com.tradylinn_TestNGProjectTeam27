@@ -1,5 +1,6 @@
 package tests;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.TradylinnPage;
 import utilities.ConfigReader;
@@ -8,8 +9,8 @@ import utilities.Driver;
 public class US007 {
     TradylinnPage tradylinPage=new TradylinnPage();
 
-    @Test
-    public void test01() {
+
+    public void signInMethod() {
         Driver.getDriver().get(ConfigReader.getProperty("tradylinnUrl"));
 
         tradylinPage.hesabimlinktext.click();
@@ -20,10 +21,12 @@ public class US007 {
         tradylinPage.storeManagerButton.click();
         tradylinPage.products.click();
         tradylinPage.addNewProduct.click();
+
     }
 
     @Test
     public void test02() {
+        signInMethod();
 
     }
 }
