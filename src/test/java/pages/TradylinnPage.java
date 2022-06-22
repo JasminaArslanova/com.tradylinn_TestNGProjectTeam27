@@ -17,6 +17,19 @@ public TradylinnPage(){PageFactory.initElements(Driver.getDriver(),this);}
     @FindBy(xpath = "(//span[@class='text'])[4]") public WebElement products;
     @FindBy(xpath = "//span[text()='Yeni ekle']") public WebElement addNewProduct;
 
+    //03-04 EVREN
+    @FindBy(xpath = "(//*[@type='submit'])[2]")
+    public WebElement girisYapButonu;
+    @FindBy(xpath = "(//*[text()='Siparişler'])[2]") public WebElement siparislerButonu;
+    @FindBy(xpath = "(//*[text()='Hesabım'])[2]") public WebElement hesabimText;
+    @FindBy(xpath = "(//*[text()='Siparişler'])[3]") public WebElement siparislerText;
+    @FindBy(xpath = "//a[@class='woocommerce-Button button btn btn-link btn-underline btn-icon-right']")
+    public WebElement urunlereGozAtButtonu;
+    @FindBy(xpath = "//*[text()='Mağaza']") public WebElement magazaText;
+
+
+
+
 
 
 
