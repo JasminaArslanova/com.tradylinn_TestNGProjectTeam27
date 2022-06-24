@@ -19,7 +19,7 @@ public class US007 {
         tradylinPage.usernameBox.sendKeys(ConfigReader.getProperty("usermail"));
         tradylinPage.passBox.sendKeys(ConfigReader.getProperty("userpass"));
         tradylinPage.signInLoginButton.click();
-        waitFor(10);
+        //waitFor(10);
         tradylinPage.storeManagerButton.click();
         tradylinPage.products.click();
         tradylinPage.addNewProduct.click();
