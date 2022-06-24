@@ -5,6 +5,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
+import java.util.List;
+
 public class TradylinnPage {
 public TradylinnPage(){PageFactory.initElements(Driver.getDriver(),this);}
 
@@ -63,8 +65,12 @@ public TradylinnPage(){PageFactory.initElements(Driver.getDriver(),this);}
     @FindBy(xpath = "(//*[text()='Siparişler'])[2]") public WebElement siparislerButonu;
     @FindBy(xpath = "(//*[text()='Hesabım'])[2]") public WebElement hesabimText;
     @FindBy(xpath = "(//*[text()='Siparişler'])[3]") public WebElement siparislerText;
-    @FindBy(xpath = "//a[@class='woocommerce-Button button btn btn-link btn-underline btn-icon-right']") public WebElement urunlereGozAtButtonu;
+    @FindBy(xpath = "//a[@class='woocommerce-Button button btn btn-link btn-underline btn-icon-right']")
+    public WebElement urunlereGozAtButtonu;
     @FindBy(xpath = "//*[text()='Mağaza']") public WebElement magazaText;
+    @FindBy(xpath = "//*[@class='btn-product-icon product_type_simple add_to_cart_button ajax_add_to_cart']")
+    public List<WebElement> sepeteEkle;
+
 
 
 
