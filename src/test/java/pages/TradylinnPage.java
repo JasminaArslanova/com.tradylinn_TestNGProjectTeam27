@@ -18,10 +18,8 @@ public TradylinnPage(){PageFactory.initElements(Driver.getDriver(),this);}
     @FindBy(linkText = "Store Manager") public WebElement storeManagerButton;
     @FindBy(xpath = "(//span[@class='text'])[4]") public WebElement products;
     @FindBy(xpath = "//span[text()='Yeni ekle']") public WebElement addNewProduct;
-
-
-
-
+    @FindBy(xpath = "(//p[@class='wcfm_title wcfm_full_ele'])[2]") public WebElement productBrandsHead;
+    @FindBy(xpath = "//ul[@id='product_brand']") public List<WebElement> productBrandsList;
 
 
 
@@ -70,10 +68,6 @@ public TradylinnPage(){PageFactory.initElements(Driver.getDriver(),this);}
     @FindBy(xpath = "//*[text()='Mağaza']") public WebElement magazaText;
     @FindBy(xpath = "//*[@class='btn-product-icon product_type_simple add_to_cart_button ajax_add_to_cart']")
     public List<WebElement> sepeteEkle;
-
-
-
-
 
 
 
@@ -244,6 +238,18 @@ public TradylinnPage(){PageFactory.initElements(Driver.getDriver(),this);}
 
 
     //240-   SEHER
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
