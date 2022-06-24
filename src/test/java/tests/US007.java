@@ -6,6 +6,8 @@ import pages.TradylinnPage;
 import utilities.ConfigReader;
 import utilities.Driver;
 
+import static utilities.ReusableMethods.waitFor;
+
 public class US007 {
     TradylinnPage tradylinPage=new TradylinnPage();
 
@@ -17,7 +19,7 @@ public class US007 {
         tradylinPage.usernameBox.sendKeys(ConfigReader.getProperty("usermail"));
         tradylinPage.passBox.sendKeys(ConfigReader.getProperty("userpass"));
         tradylinPage.signInLoginButton.click();
-
+        //waitFor(10);
         tradylinPage.storeManagerButton.click();
         tradylinPage.products.click();
         tradylinPage.addNewProduct.click();
