@@ -5,6 +5,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
+import java.util.List;
+
 public class TradylinnPage {
 public TradylinnPage(){PageFactory.initElements(Driver.getDriver(),this);}
 
@@ -16,10 +18,8 @@ public TradylinnPage(){PageFactory.initElements(Driver.getDriver(),this);}
     @FindBy(linkText = "Store Manager") public WebElement storeManagerButton;
     @FindBy(xpath = "(//span[@class='text'])[4]") public WebElement products;
     @FindBy(xpath = "//span[text()='Yeni ekle']") public WebElement addNewProduct;
-
-
-
-
+    @FindBy(xpath = "(//p[@class='wcfm_title wcfm_full_ele'])[2]") public WebElement productBrandsHead;
+    @FindBy(xpath = "//ul[@id='product_brand']") public List<WebElement> productBrandsList;
 
 
 
@@ -238,6 +238,18 @@ public TradylinnPage(){PageFactory.initElements(Driver.getDriver(),this);}
 
 
     //240-   SEHER
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
