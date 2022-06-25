@@ -23,12 +23,13 @@ public class US007 {
         tradylinPage.storeManagerButton.click();
         tradylinPage.products.click();
         tradylinPage.addNewProduct.click();
-
     }
 
     @Test
-    public void test02() {
+    public void TC001() {
         signInMethod();
+        //Assert.assertTrue();
+
 
     }
 }
