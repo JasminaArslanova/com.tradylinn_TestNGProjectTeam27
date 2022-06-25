@@ -28,7 +28,7 @@ public class US007 {
     @Test
     public void TC001() {
         signInMethod();
-        //Assert.assertTrue();
+        Assert.assertTrue(tradylinPage.productBrandsHead.isDisplayed());
 
 
     }
