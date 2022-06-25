@@ -29,6 +29,7 @@ public class US007 {
     public void TC001() {
         signInMethod();
         Assert.assertTrue(tradylinPage.productBrandsHead.isDisplayed());
+        Assert.assertTrue(tradylinPage.productBrandsHead.getText().contains("Product brands"));
 
 
     }
