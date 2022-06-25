@@ -102,4 +102,32 @@ public class US003 extends TestBaseRapor {
         extentTest.pass("Urunlerin sepete eklendigi goruldu");
         Thread.sleep(10000);
     }
+
+    @Test
+    public void test03() {
+        /*
+        url` ye gidilir
+        Giris yap' a tiklanir
+        Gecerli kullanici bilgileri girilir
+        Giris yap' a tiklanir
+        Hesabim sayfasina giris yapildigi test edilir
+        Acilan sayfada siparisler bolumune tiklanir
+        Acilan sayfada Browse Products(Urunlere Goz At) butonuna tiklanir
+        Magaza butonunun gorunur oldugu test edilir
+        Rastgele 5 urun secilir ve sepete eklenir
+        sepetim e clikck yapilir
+        sepeti goruntuleye click yapilir
+        Sepet sayfasina gidildigi test edilir
+        Go To Payment(odeme sayfasi) a click yapilir
+        fatura detaylarinin gorunurlugu test edilir
+         */
+
+        giris();
+        js.executeScript("arguments[0].click();", trady.sepet);
+        js.executeScript("arguments[0].click();", trady.sepetiGoruntuleButton);
+        Assert.assertTrue(Driver.getDriver().getCurrentUrl().contains("cart"));
+        js.executeScript("arguments[0].click();", trady.odemeSayfasiButton);
+        Assert.assertTrue(trady.faturaDetaylari.isDisplayed());
+
+    }
 }

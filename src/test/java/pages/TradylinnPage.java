@@ -70,6 +70,10 @@ public TradylinnPage(){PageFactory.initElements(Driver.getDriver(),this);}
     public List<WebElement> sepeteEkle;
     @FindBy(xpath = "(//*[@class='cart-count'])[1]") public WebElement sepet;
     @FindBy(xpath = "//*[@class='widget_shopping_cart_content']") public WebElement sepetVisible;
+    @FindBy(xpath = "//a[@class='button wc-forward']") public WebElement sepetiGoruntuleButton;
+    @FindBy(xpath = "//a[@class='checkout-button button alt wc-forward']") public WebElement odemeSayfasiButton;
+    @FindBy(xpath = "//h3[contains(text(),'Fatura detayları')]") public WebElement faturaDetaylari;
+
 
 
 
