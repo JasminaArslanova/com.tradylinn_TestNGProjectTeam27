@@ -3,6 +3,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
+
+import java.util.Arrays;
 import java.util.List;
 public class TradylinnPage {
 public TradylinnPage(){PageFactory.initElements(Driver.getDriver(),this);}
@@ -17,14 +19,12 @@ public TradylinnPage(){PageFactory.initElements(Driver.getDriver(),this);}
     @FindBy(xpath = "(//span[@class='text'])[4]") public WebElement products;
     @FindBy(xpath = "//span[text()='Yeni ekle']") public WebElement addNewProduct;
     @FindBy(xpath = "(//p[@class='wcfm_title wcfm_full_ele'])[2]") public WebElement productBrandsHead;
-    @FindBy(xpath = "//ul[@id='product_brand']") public List<WebElement> productBrandsList;
-
-
-
-
-
-
-
+    @FindBy(xpath = "//strong[text()='Manage Stock?']") public WebElement manageStockHead;
+    @FindBy(xpath = "//input[@id='manage_stock']") public WebElement manageStockCheckbox;
+    @FindBy(xpath = "//strong[text()='Stock Qty']") public WebElement stockQtyHead;
+    @FindBy(xpath = "//input[@id='stock_qty']") public WebElement stockQtytextbox;
+    @FindBy(xpath = "//strong[text()='Allow Backorders?']") public WebElement allowBackordersHead;
+    @FindBy(xpath = "//select[@id='backorders']") public WebElement backordersDropdown;
 
 
 
