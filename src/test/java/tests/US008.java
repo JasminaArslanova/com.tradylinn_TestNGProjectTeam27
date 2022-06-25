@@ -50,6 +50,8 @@ public class US008 {
     @Test(dependsOnMethods = "TC001")
     public void TC003() {
         Select select=new Select(tradylinPage.backordersDropdown);
+        softAssert.assertTrue(tradylinPage.allowBackordersHead.getText().contains("Allow Backorders"),
+                "Head does not contain \"Allow Backorders\"");
 
         List<WebElement> actualOptionList=select.getOptions();
         List<String> optionList=getElementsText(actualOptionList);
