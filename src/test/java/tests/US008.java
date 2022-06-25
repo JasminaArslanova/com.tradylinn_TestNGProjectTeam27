@@ -51,7 +51,7 @@ public class US008 {
                 "\"Allow\" option is not founded");
 
         select.selectByVisibleText("Do not Allow");
-        softAssert.assertTrue(select.getFirstSelectedOption().isSelected());
+        softAssert.assertTrue(select.getFirstSelectedOption().isSelected(),"\"Do not Allow\" option is not selected");
 
     }
 }
