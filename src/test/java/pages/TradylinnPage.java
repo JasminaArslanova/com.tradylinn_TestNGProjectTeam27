@@ -1,14 +1,12 @@
 package pages;
-
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
-
 import java.util.List;
-
 public class TradylinnPage {
 public TradylinnPage(){PageFactory.initElements(Driver.getDriver(),this);}
+
 
     //11-30 JASMINA
     @FindBy(linkText="Hesabım") public WebElement hesabimlinktext;
@@ -20,6 +18,8 @@ public TradylinnPage(){PageFactory.initElements(Driver.getDriver(),this);}
     @FindBy(xpath = "//span[text()='Yeni ekle']") public WebElement addNewProduct;
     @FindBy(xpath = "(//p[@class='wcfm_title wcfm_full_ele'])[2]") public WebElement productBrandsHead;
     @FindBy(xpath = "//ul[@id='product_brand']") public List<WebElement> productBrandsList;
+
+
 
 
 
@@ -68,7 +68,11 @@ public TradylinnPage(){PageFactory.initElements(Driver.getDriver(),this);}
     @FindBy(xpath = "//*[text()='Mağaza']") public WebElement magazaText;
     @FindBy(xpath = "//*[@class='btn-product-icon product_type_simple add_to_cart_button ajax_add_to_cart']")
     public List<WebElement> sepeteEkle;
-
+    @FindBy(xpath = "(//*[@class='cart-count'])[1]") public WebElement sepet;
+    @FindBy(xpath = "//*[@class='widget_shopping_cart_content']") public WebElement sepetVisible;
+    @FindBy(xpath = "//a[@class='button wc-forward']") public WebElement sepetiGoruntuleButton;
+    @FindBy(xpath = "//a[@class='checkout-button button alt wc-forward']") public WebElement odemeSayfasiButton;
+    @FindBy(xpath = "//h3[contains(text(),'Fatura detayları')]") public WebElement faturaDetaylari;
 
 
 

@@ -1,6 +1,7 @@
 package tests;
 
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
@@ -10,7 +11,7 @@ import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.TestBaseRapor;
 
-import java.util.Random;
+import java.util.*;
 
 public class US003 extends TestBaseRapor {
     TradylinnPage trady = new TradylinnPage();
@@ -19,7 +20,7 @@ public class US003 extends TestBaseRapor {
     Random rnd = new Random();
 
     public void giris() {
-        extentTest = extentReports.createTest("US_003_TC_01","Sayfaya giris yapilir");
+        extentTest = extentReports.createTest("US_003_TC_01", "Sayfaya giris yapilir");
         Driver.getDriver().get(ConfigReader.getProperty("tradylinnUrl"));
         extentTest.info("Tradylinn Sayfasina Gildi");
         trady.hesabimlinktext.click();
@@ -57,6 +58,7 @@ public class US003 extends TestBaseRapor {
         Assert.assertTrue(trady.magazaText.isDisplayed());
         extentTest.pass("Magaza sayfasina giris yapildigi goruldu");
     }
+
     @Test
     public void test01() {
         /*
@@ -75,7 +77,7 @@ public class US003 extends TestBaseRapor {
     }
 
     @Test
-    public void test02() {
+    public void test02() throws InterruptedException {
         /*
           url` ye gidilir
           Giris yap' a tiklanir
@@ -88,13 +90,44 @@ public class US003 extends TestBaseRapor {
           Rastgele 5 urun secilir ve sepete eklenir
           Urunlerin sepette gorundugu test edilir
          */
-     giris();
-
-        try {
-            trady.sepeteEkle.get(rnd.nextInt(5)).click();
-        } catch (Exception e) {
-            js.executeScript("arguments[0].click();", trady.sepeteEkle.get(rnd.nextInt(5)));
+        giris();
+        Thread.sleep(2000);
+        for (int i = 0; i < 5; i++) {
+            js.executeScript("arguments[0].click();",trady.sepeteEkle.get(rnd.nextInt(5)));
         }
+        extentTest.info("Rastgele 5 urun sepete eklendi");
+        js.executeScript("arguments[0].click();", trady.sepet);
+        Thread.sleep(2000);
+        Assert.assertTrue(trady.sepetVisible.isDisplayed());
+        extentTest.pass("Urunlerin sepete eklendigi goruldu");
+        Thread.sleep(10000);
+    }
+
+    @Test
+    public void test03() {
+        /*
+        url` ye gidilir
+        Giris yap' a tiklanir
+        Gecerli kullanici bilgileri girilir
+        Giris yap' a tiklanir
+        Hesabim sayfasina giris yapildigi test edilir
+        Acilan sayfada siparisler bolumune tiklanir
+        Acilan sayfada Browse Products(Urunlere Goz At) butonuna tiklanir
+        Magaza butonunun gorunur oldugu test edilir
+        Rastgele 5 urun secilir ve sepete eklenir
+        sepetim e clikck yapilir
+        sepeti goruntuleye click yapilir
+        Sepet sayfasina gidildigi test edilir
+        Go To Payment(odeme sayfasi) a click yapilir
+        fatura detaylarinin gorunurlugu test edilir
+         */
+
+        giris();
+        js.executeScript("arguments[0].click();", trady.sepet);
+        js.executeScript("arguments[0].click();", trady.sepetiGoruntuleButton);
+        Assert.assertTrue(Driver.getDriver().getCurrentUrl().contains("cart"));
+        js.executeScript("arguments[0].click();", trady.odemeSayfasiButton);
+        Assert.assertTrue(trady.faturaDetaylari.isDisplayed());
 
     }
 }
