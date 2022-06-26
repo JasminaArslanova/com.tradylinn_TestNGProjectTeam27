@@ -24,7 +24,7 @@ public class US007 extends TestBaseRapor {
     @Test
     public void TC001_VendorCanSeeGivenProductBrands() {
         extentTest=extentReports.createTest("TC001_VendorCanSeeGivenProductBrands",
-         "Vendor, Add Product sayfasında, Product Brands başlığı altında verilen brand isimlerini görebilmeli");
+"Vendor, Add Product sayfasında, Product Brands başlığı altında verilen brand isimlerini görebilmeli");
 
         signInMethodForUS07_US08();
         extentTest.info("Tradylinn Add product sayfasina gidildi");
@@ -46,7 +46,7 @@ public class US007 extends TestBaseRapor {
     @Test (dependsOnMethods = "TC001_VendorCanSeeGivenProductBrands")
     public void TC002_VendorCanSelectGivenProductBrands() {
         extentTest=extentReports.createTest("TC002_VendorCanSelectGivenProductBrands",
-                "Vendor, Add Product sayfasında, Product Brands başlığı altında verilen brand'leri seçebilmeli");
+"Vendor, Add Product sayfasında, Product Brands başlığı altında verilen brand'leri seçebilmeli");
 
         for (String each:expectedBrandList) {
             softAssert.assertTrue(Driver.getDriver()
