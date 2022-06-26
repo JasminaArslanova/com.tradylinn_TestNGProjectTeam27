@@ -1,24 +1,29 @@
 package tests;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 import pages.TradylinnPage;
+import utilities.Driver;
 
 import java.util.Arrays;
 import java.util.List;
-
 import static tests.US007.signInMethod;
 import static utilities.ReusableMethods.getElementsText;
+import static utilities.ReusableMethods.waitFor;
 
 
 public class US008 {
     static TradylinnPage tradylinPage=new TradylinnPage();
     SoftAssert softAssert = new SoftAssert();
+    Actions actions=new Actions(Driver.getDriver());
 
     @Test
     public void TC001() {
         signInMethod();
+        actions.sendKeys(Keys.PAGE_DOWN).perform();
         softAssert.assertTrue(tradylinPage.manageStockHead.getText().contains("Manage Stock"),
                 "Head does not contain \"Manage Stock\"");
         softAssert.assertTrue(tradylinPage.manageStockCheckbox.isDisplayed(),
@@ -41,7 +46,8 @@ public class US008 {
                 "\"Stock Qty\" textbox is not displayed\"");
         softAssert.assertTrue(tradylinPage.stockQtytextbox.isEnabled(),
                 "\"Stock Qty\" textbox is not enabled\"");
-
+         waitFor(3);
+        tradylinPage.stockQtytextbox.clear();
         tradylinPage.stockQtytextbox.sendKeys("10");
 
         softAssert.assertAll();
