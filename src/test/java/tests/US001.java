@@ -8,16 +8,20 @@ import org.testng.annotations.Test;
 import pages.TradylinnPage;
 import utilities.ConfigReader;
 import utilities.Driver;
+import utilities.ReusableMethods;
+
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 public class US001 {
 
-    TradylinnPage tradylinnPage = new TradylinnPage();
-    Actions actions = new Actions(Driver.getDriver());
-    JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
+    static TradylinnPage tradylinnPage = new TradylinnPage();
+    static Actions actions = new Actions(Driver.getDriver());
+    static JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
 
 
 
-    public void vendorUyeOlSayfasinaGit() {
+    public static void vendorUyeOlSayfasinaGit() {
         /*
          1_https://tradiylinn.com/ adresine gider
          2_üye ol'a tıklar
@@ -34,6 +38,14 @@ public class US001 {
         tradylinnPage.registerAsVendorLinkText.click();
         //      Registration sayfasında oldugunu dogrular"
         Assert.assertTrue(tradylinnPage.vendorRegisterBaslik.isDisplayed());
+        Driver.closeDriver();
+    }
+
+    public static String gecerliEmailOlustur() {
+        LocalDateTime currentDateTime = LocalDateTime.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyyMMddHHmmss");
+        String formattedDateTime = currentDateTime.format(formatter);
+        return "tradylinn" + currentDateTime + "@gmail.com";
     }
 
     @Test
@@ -48,21 +60,42 @@ public class US001 {
         String expectedEmailText = "Email";
         String expectedPasswordText = "Password";
         String expectedConfirmPwText = "Confirm Password";
+        ReusableMethods.waitFor(5);
         String actualEmailText = tradylinnPage.vendorRegisterEmailText.getText().replace("*","");
+        ReusableMethods.waitFor(5);
         String actualPasswordText = tradylinnPage.vendorRegisterPasswordText.getText().replace("*","");
+        ReusableMethods.waitFor(5);
         String actualConfirmPwText = tradylinnPage.vendorRegisterConfirmPwText.getText().replace("*","");
-
+        ReusableMethods.waitFor(5);
         Assert.assertEquals(actualEmailText,expectedEmailText);
         Assert.assertEquals(expectedPasswordText,actualPasswordText);
         Assert.assertEquals(expectedConfirmPwText,actualConfirmPwText);
-
+        ReusableMethods.waitFor(5);
         Assert.assertTrue(tradylinnPage.vendorRegisterEmailTextBox.isEnabled());
+        ReusableMethods.waitFor(5);
         Assert.assertTrue(tradylinnPage.vendorRegisterPasswordTextBox.isEnabled());
+        ReusableMethods.waitFor(5);
         Assert.assertTrue(tradylinnPage.vendorRegisterConfirmPwTextBox.isEnabled());
 
     }
-
-    /*
-
-     */
+    @Test (priority = 1)
+    public void testCase002() {
+        vendorUyeOlSayfasinaGit();
+        //4_gecerli email girer
+        ReusableMethods.waitFor(5);
+        tradylinnPage.vendorRegisterEmailTextBox.sendKeys(gecerliEmailOlustur());
+        //"5_gulch password girer ve strong mesajı çıktığını görür"
+        ReusableMethods.waitFor(5);
+        tradylinnPage.vendorRegisterPasswordTextBox.sendKeys(ConfigReader.getProperty("gulchPassword"));
+        //6_passwordu dogru onaylar
+        ReusableMethods.waitFor(5);
+        tradylinnPage.vendorRegisterConfirmPwTextBox.sendKeys(ConfigReader.getProperty("gulchPassword"));
+        //7_register butonuna basar
+        ReusableMethods.waitFor(5);
+        js.executeScript("arguments[0].scrollIntoView();", tradylinnPage.vendorRegisterPageButton);
+        tradylinnPage.vendorRegisterPageButton.click();
+        //8_onay yazısının çıktğını doğrular
+        ReusableMethods.waitFor(5);
+        Assert.assertTrue(tradylinnPage.registrationSuccessHeader.isDisplayed());
+    }
 }
