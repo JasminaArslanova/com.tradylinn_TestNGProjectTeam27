@@ -8,7 +8,6 @@ import org.testng.asserts.SoftAssert;
 import pages.TradylinnPage;
 import utilities.Driver;
 import utilities.TestBaseRapor;
-
 import java.util.Arrays;
 import java.util.List;
 import static tests.US007.signInMethodForUS07_US08;
