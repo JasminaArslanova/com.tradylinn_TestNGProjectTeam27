@@ -17,12 +17,12 @@ public TradylinnPage(){PageFactory.initElements(Driver.getDriver(),this);}
     @FindBy(xpath = "(//span[@class='text'])[4]") public WebElement products;
     @FindBy(xpath = "//span[text()='Yeni ekle']") public WebElement addNewProduct;
     @FindBy(xpath = "(//p[@class='wcfm_title wcfm_full_ele'])[2]") public WebElement productBrandsHead;
-    @FindBy(xpath = "//ul[@id='product_brand']") public List<WebElement> productBrandsList;
-
-
-
-
-
+    @FindBy(xpath = "//strong[text()='Manage Stock?']") public WebElement manageStockHead;
+    @FindBy(xpath = "//input[@id='manage_stock']") public WebElement manageStockCheckbox;
+    @FindBy(xpath = "//strong[text()='Stock Qty']") public WebElement stockQtyHead;
+    @FindBy(xpath = "//input[@id='stock_qty']") public WebElement stockQtytextbox;
+    @FindBy(xpath = "//strong[text()='Allow Backorders?']") public WebElement allowBackordersHead;
+    @FindBy(xpath = "//select[@id='backorders']") public WebElement backordersDropdown;
 
 
 
@@ -99,10 +99,6 @@ public TradylinnPage(){PageFactory.initElements(Driver.getDriver(),this);}
 
 
 
-
-
-
-
     //91-115 AYHAN
 
 
@@ -129,19 +125,19 @@ public TradylinnPage(){PageFactory.initElements(Driver.getDriver(),this);}
 
 
     //116-140 ALI
-
-
-
-
-
-
-
-
-
-
-
-
-
+    @FindBy(xpath = "//*[text()='Üye Ol']") public WebElement uyeOlHeaderButton;
+    @FindBy(xpath = "//button[@name='register']") public WebElement kayitOlPopUpButton;
+    @FindBy(xpath = "//a[@class='register_as_vendor']") public WebElement registerAsVendorLinkText;
+    @FindBy(xpath = "//h2[@class='page-title']") public WebElement vendorRegisterBaslik;
+    @FindBy(xpath = "//p[@class='user_email wcfm_ele wcfm_title']") public WebElement vendorRegisterEmailText;
+    @FindBy(xpath = "//input[@id='user_email']") public WebElement vendorRegisterEmailTextBox;
+    @FindBy(xpath = "//p[@class='passoword wcfm_ele wcfm_title']") public WebElement vendorRegisterPasswordText;
+    @FindBy(xpath = "//input[@id='passoword']") public WebElement vendorRegisterPasswordTextBox;
+    @FindBy(xpath = "//p[@class='confirm_pwd wcfm_ele wcfm_title']") public WebElement vendorRegisterConfirmPwText;
+    @FindBy(xpath = "//input[@id='confirm_pwd']") public WebElement vendorRegisterConfirmPwTextBox;
+    @FindBy(xpath = "//input[@id='wcfm_membership_register_button']") public WebElement vendorRegisterPageButton;
+    @FindBy(xpath = "//div[@class='wcfm-message wcfm-error']") public WebElement requiredFieldUyariMesaji;
+    @FindBy(xpath = "//h2[@class='wcfm_registration_form_heading']") public WebElement registrationSuccessHeader;
 
 
 
