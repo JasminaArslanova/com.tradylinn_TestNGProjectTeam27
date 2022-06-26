@@ -88,17 +88,6 @@ public TradylinnPage(){PageFactory.initElements(Driver.getDriver(),this);}
 
 
 
-
-
-
-
-
-
-
-
-
-
-
     //91-115 AYHAN
 
 
