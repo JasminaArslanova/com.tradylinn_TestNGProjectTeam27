@@ -17,12 +17,12 @@ public TradylinnPage(){PageFactory.initElements(Driver.getDriver(),this);}
     @FindBy(xpath = "(//span[@class='text'])[4]") public WebElement products;
     @FindBy(xpath = "//span[text()='Yeni ekle']") public WebElement addNewProduct;
     @FindBy(xpath = "(//p[@class='wcfm_title wcfm_full_ele'])[2]") public WebElement productBrandsHead;
-    @FindBy(xpath = "//ul[@id='product_brand']") public List<WebElement> productBrandsList;
-
-
-
-
-
+    @FindBy(xpath = "//strong[text()='Manage Stock?']") public WebElement manageStockHead;
+    @FindBy(xpath = "//input[@id='manage_stock']") public WebElement manageStockCheckbox;
+    @FindBy(xpath = "//strong[text()='Stock Qty']") public WebElement stockQtyHead;
+    @FindBy(xpath = "//input[@id='stock_qty']") public WebElement stockQtytextbox;
+    @FindBy(xpath = "//strong[text()='Allow Backorders?']") public WebElement allowBackordersHead;
+    @FindBy(xpath = "//select[@id='backorders']") public WebElement backordersDropdown;
 
 
 
@@ -73,10 +73,6 @@ public TradylinnPage(){PageFactory.initElements(Driver.getDriver(),this);}
     @FindBy(xpath = "//a[@class='button wc-forward']") public WebElement sepetiGoruntuleButton;
     @FindBy(xpath = "//a[@class='checkout-button button alt wc-forward']") public WebElement odemeSayfasiButton;
     @FindBy(xpath = "//h3[contains(text(),'Fatura detayları')]") public WebElement faturaDetaylari;
-
-
-
-
 
 
 
