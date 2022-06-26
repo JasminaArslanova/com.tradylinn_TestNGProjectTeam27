@@ -114,19 +114,19 @@ public TradylinnPage(){PageFactory.initElements(Driver.getDriver(),this);}
 
 
     //116-140 ALI
-
-
-
-
-
-
-
-
-
-
-
-
-
+    @FindBy(xpath = "//*[text()='Üye Ol']") public WebElement uyeOlHeaderButton;
+    @FindBy(xpath = "//button[@name='register']") public WebElement kayitOlPopUpButton;
+    @FindBy(xpath = "//a[@class='register_as_vendor']") public WebElement registerAsVendorLinkText;
+    @FindBy(xpath = "//h2[@class='page-title']") public WebElement vendorRegisterBaslik;
+    @FindBy(xpath = "//p[@class='user_email wcfm_ele wcfm_title']") public WebElement vendorRegisterEmailText;
+    @FindBy(xpath = "//input[@id='user_email']") public WebElement vendorRegisterEmailTextBox;
+    @FindBy(xpath = "//p[@class='passoword wcfm_ele wcfm_title']") public WebElement vendorRegisterPasswordText;
+    @FindBy(xpath = "//input[@id='passoword']") public WebElement vendorRegisterPasswordTextBox;
+    @FindBy(xpath = "//p[@class='confirm_pwd wcfm_ele wcfm_title']") public WebElement vendorRegisterConfirmPwText;
+    @FindBy(xpath = "//input[@id='confirm_pwd']") public WebElement vendorRegisterConfirmPwTextBox;
+    @FindBy(xpath = "//input[@id='wcfm_membership_register_button']") public WebElement vendorRegisterPageButton;
+    @FindBy(xpath = "//div[@class='wcfm-message wcfm-error']") public WebElement requiredFieldUyariMesaji;
+    @FindBy(xpath = "//h2[@class='wcfm_registration_form_heading']") public WebElement registrationSuccessHeader;
 
 
 
