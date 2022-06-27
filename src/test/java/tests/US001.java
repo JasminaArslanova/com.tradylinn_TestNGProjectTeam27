@@ -13,6 +13,9 @@ import utilities.ReusableMethods;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
 public class US001 {
 
     static TradylinnPage tradylinnPage = new TradylinnPage();
@@ -61,6 +64,7 @@ public class US001 {
         String expectedPasswordText = "Password";
         String expectedConfirmPwText = "Confirm Password";
         ReusableMethods.waitFor(5);
+
         String actualEmailText = tradylinnPage.vendorRegisterEmailText.getText().replace("*","");
         ReusableMethods.waitFor(5);
         String actualPasswordText = tradylinnPage.vendorRegisterPasswordText.getText().replace("*","");
@@ -97,5 +101,6 @@ public class US001 {
         //8_onay yazısının çıktğını doğrular
         ReusableMethods.waitFor(5);
         Assert.assertTrue(tradylinnPage.registrationSuccessHeader.isDisplayed());
+
     }
 }
