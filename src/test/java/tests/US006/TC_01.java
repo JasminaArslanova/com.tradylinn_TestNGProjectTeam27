@@ -27,7 +27,7 @@ public class TC_01 {
 
         // ilk kategori screenShot alinir
         actions.sendKeys(Keys.PAGE_DOWN).build().perform();
-        Thread.sleep(3000);
+        Thread.sleep(5000);
         TradyMethod.getScreenshot("ilkKategoriBesin"); // Kategori ilk halde ürünlerde kategori ekran goruntusu
 
         //kullanici düzenle butonuna tiklar

@@ -57,7 +57,7 @@ public class TC_02 {
 
         // son kategori screenShot alinir
         actions.sendKeys(Keys.PAGE_DOWN).build().perform();
-        Thread.sleep(3000);
+        Thread.sleep(5000);
         TradyMethod.getScreenshot("sonKategori");// Kategori degistikten sonra ürünlerde kategori ekran goruntusu
 
         // Not ürün sayfasında sonrasinda kategori degisimini asssert edebilmik için
