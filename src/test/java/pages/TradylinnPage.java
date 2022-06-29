@@ -89,23 +89,23 @@ public TradylinnPage(){PageFactory.initElements(Driver.getDriver(),this);}
 
 
     //91-115 AYHAN
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    @FindBy(xpath = "//span[contains(text(),'Giriş Yap')]") public static WebElement girisButonu;
+    @FindBy(xpath = "//*[@id='wcfm-products']/tbody/tr[2]/td[1]/input") public WebElement urunSecmeCheckBox;
+    @FindBy(xpath = "(//a[contains(text(),'Hesabım')])[1]") public static WebElement Hesabim;
+    @FindBy(xpath = "//*[@id='wcfm-products']/tbody/tr[2]/td[12]/a[5]/span")  public WebElement duzenleButonu;
+    @FindBy (xpath = " //*[@id=\"wcfm-products\"]/tbody/tr[2]/td[8]/a") public WebElement actualKategori;
+    @FindBy(xpath = "//*[@id='product_cats_checklist']/li[1]/input") public WebElement besinTakviyeleri;
+    @FindBy(xpath = "//*[@id='product_cats_checklist']/li[3]/input") public WebElement cokSatanlar;
+    @FindBy(xpath = "//*[@id='product_cats_checklist']/li[5]/input") public WebElement eleElo;
+    @FindBy(xpath = "//*[@id='product_cats_checklist']/li[6]/input") public WebElement evYasam;
+    @FindBy(xpath = "//*[@id='product_cats_checklist']/li[9]/input") public WebElement indirimliUrun;
+    @FindBy(xpath = "//*[@id='product_cats_checklist']/li[10]/input") public WebElement kiMuFi;
+    @FindBy(xpath = "//*[@id='product_cats_checklist']/li[11]/input") public WebElement koKi;
+    @FindBy(xpath = "//*[@id='product_cats_checklist']/li[13]/input") public WebElement modaGiyim;
+    @FindBy(xpath = "//*[@id='product_cats_checklist']/li[16]/input") public WebElement oyuncak;
+    @FindBy(xpath = "//*[@id='product_cats_checklist']/li[19]/input") public WebElement takiAks;
+    @FindBy(xpath = "//*[@id='product_cats_checklist']/li[21]/input") public WebElement yeniUrun;
+    @FindBy (xpath = "//input[@name='submit-data']") public WebElement submitButonu;
 
 
 

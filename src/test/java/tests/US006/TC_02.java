@@ -7,10 +7,10 @@ import org.testng.annotations.Test;
 import pages.TradylinnPage;
 import utilities.Driver;
 
-public class TC_01 {
+public class TC_02 {
 
     @Test
-    public void test1() throws InterruptedException {
+    public void test2() throws InterruptedException {
 
         TradylinnPage tradyPage = new TradylinnPage();
         Actions actions=new Actions(Driver.getDriver());
@@ -19,7 +19,7 @@ public class TC_01 {
 
         // Not ürün sayfasında sonrasinda kategori degisimini asssert edebilmik için
         // ilk kategori degisimindden onceki kategori handle edildi
-        String expectedKategori= "Besin Takviyeleri";
+        String expectedKategori= "Çok Satanlar";
         String ilkKategori= tradyPage.actualKategori.getText();
 
         //kullanici düzenle butonuna tiklar
@@ -36,7 +36,7 @@ public class TC_01 {
             }
         }
         // ikinci  olarak yeni kategoride ki expectedKategori degeri cehckbox'i kliklenir
-        TradyMethod.jsClick(tradyPage.besinTakviyeleri);
+        TradyMethod.jsClick(tradyPage.cokSatanlar);
 
         Thread.sleep(5000); // Yeni kategori tıklandigini görebilmek içim beklettik
 
