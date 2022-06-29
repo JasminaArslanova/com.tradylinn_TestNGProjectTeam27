@@ -1,15 +1,18 @@
 package tests.US006;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.TradylinnPage;
 import utilities.Driver;
 
+import java.io.IOException;
+
 public class TC_03 {
     @Test
-    public void test3() throws InterruptedException {
+    public void test3() throws InterruptedException, IOException {
 
         TradylinnPage tradyPage = new TradylinnPage();
         Actions actions=new Actions(Driver.getDriver());
@@ -20,6 +23,11 @@ public class TC_03 {
         // ilk kategori degisimindden onceki kategori handle edildi
         String expectedKategori= "Elektrik & Elektronik";
         String ilkKategori= tradyPage.actualKategori.getText();
+
+        // ilk kategori screenShot alinir
+        actions.sendKeys(Keys.PAGE_DOWN).build().perform();
+        Thread.sleep(3000);
+        TradyMethod.getScreenshot("ilkKategoriBesin"); // Kategori ilk halde ürünlerde kategori ekran goruntusu
 
         //kullanici düzenle butonuna tiklar
         TradyMethod.jsClick(tradyPage.duzenleButonu);
@@ -45,6 +53,11 @@ public class TC_03 {
 
         //kullanici ürünler sayfasina geri döner
         TradyMethod.jsClick(tradyPage.products);
+
+        // son kategori screenShot alinir
+        actions.sendKeys(Keys.PAGE_DOWN).build().perform();
+        Thread.sleep(3000);
+        TradyMethod.getScreenshot("sonKategori");// Kategori degistikten sonra ürünlerde kategori ekran goruntusu
 
         // Not ürün sayfasında sonrasinda kategori degisimini asssert edebilmik için
         // kategori degisimindden sonraki actualKategori handle edildi
