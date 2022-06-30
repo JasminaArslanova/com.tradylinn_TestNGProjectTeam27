@@ -23,7 +23,7 @@ public class US003 extends TestBaseRapor {
     JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
     Random rnd = new Random();
     Faker faker = new Faker();
-    WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(30));
+    WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(500));
 
     public void giris() {
         extentTest = extentReports.createTest("US_003_TC_01", "Sayfaya giris yapilir");
@@ -223,7 +223,8 @@ public class US003 extends TestBaseRapor {
         for (int i = 0; i < 5; i++) {
             js.executeScript("arguments[0].click();", trady.sepeteEkle.get(rnd.nextInt(5)));
         }
-        extentTest.info("Rastgele 5 urun sepete eklendi");
+        //extentTest.info("Rastgele 5 urun sepete eklendi");
+        Thread.sleep(6000);
         js.executeScript("arguments[0].click();", trady.sepet);
         Thread.sleep(2000);
         Assert.assertTrue(trady.sepetVisible.isDisplayed());
@@ -243,19 +244,29 @@ public class US003 extends TestBaseRapor {
                 .sendKeys(faker.address().cityName()).sendKeys(Keys.TAB)
                 .sendKeys(Keys.TAB).sendKeys(faker.phoneNumber().cellPhone())
                 .sendKeys(Keys.TAB).sendKeys("tradylinn11@gmail.com").sendKeys(Keys.TAB)
-                .sendKeys(faker.address().secondaryAddress()).perform();
+                .sendKeys(faker.address().fullAddress()).perform();
         Thread.sleep(2000);
         js.executeScript("arguments[0].scrollIntoView(true);", trady.teslimatAdresi);
         Thread.sleep(2000);
-        js.executeScript("arguments[0].click();", trady.googleOk);
-        Thread.sleep(2000);
+        try {
+            trady.googleOk.click();
+        } catch (Exception e) {
+            js.executeScript("arguments[0].click();", trady.googleOk);
+        }
+        Thread.sleep(60000);
+        try {
+            trady.teslimatPoint.click();
+        } catch (Exception e) {
+            js.executeScript("arguments[0].click();", trady.teslimatPoint);
+        }
+        trady.teslimatPoint.sendKeys("test1"+Keys.ENTER);
+
+        Thread.sleep(8000);
         js.executeScript("arguments[0].click();", trady.teslimatYontemi);
         Thread.sleep(2000);
         js.executeScript("arguments[0].click();", trady.siparisiOnayla);
-        Thread.sleep(2000);
         wait.until(ExpectedConditions.visibilityOf(trady.thankYouVisible));
         Assert.assertTrue(trady.thankYouVisible.isDisplayed());
-
 
     }
 }

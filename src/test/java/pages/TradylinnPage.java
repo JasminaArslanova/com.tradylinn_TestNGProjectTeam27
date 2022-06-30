@@ -5,7 +5,7 @@ import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 import java.util.List;
 public class TradylinnPage {
-public TradylinnPage(){PageFactory.initElements(Driver.getDriver(),this);}
+    public TradylinnPage(){PageFactory.initElements(Driver.getDriver(),this);}
 
 
     //11-30 JASMINA
@@ -265,4 +265,102 @@ public TradylinnPage(){PageFactory.initElements(Driver.getDriver(),this);}
     //266-   SEHER
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    @FindBy(xpath = "(//*[@class='select2-selection select2-selection--single'])[3]") public WebElement teslimatPoint;
 }
