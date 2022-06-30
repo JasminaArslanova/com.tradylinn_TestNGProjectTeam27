@@ -5,7 +5,7 @@ import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 import java.util.List;
 public class TradylinnPage {
-public TradylinnPage(){PageFactory.initElements(Driver.getDriver(),this);}
+public  TradylinnPage(){PageFactory.initElements(Driver.getDriver(),this);}
 
 
     //11-30 JASMINA
@@ -240,20 +240,74 @@ public TradylinnPage(){PageFactory.initElements(Driver.getDriver(),this);}
 
 
 
+    //Seher  US002TestCase01
+
+    @FindBy(xpath = "//span[contains(text(),'Giriş Yap')]")
+    public static WebElement girisButonu;
+    @FindBy(xpath = " //input[@id='username']")
+    public static WebElement username;
+    @FindBy(xpath = " //input[@id='password']")
+    public static WebElement password;
+    @FindBy(xpath = "//button[contains(text(),'Giriş Yap')]")
+    public static WebElement girisButonu2;
+    @FindBy(xpath = "(//a[contains(text(),'Hesabım')])[1]")
+    public static WebElement Hesabim;
+    @FindBy(xpath = "//h2[contains(text(),'Hesabım')] ")
+    public static WebElement myaccount;
+
+
+    //Seher US002TestCase02
+
+    @FindBy(xpath = "//a[normalize-space()='Store Manager']")
+    public static WebElement StoreManager;
+    @FindBy(xpath = "(//a[contains(text(),'Siparişler')])[1] ")
+    public static WebElement Orders ;
+    @FindBy(xpath = "//a[contains(text(),'İndirmeler')] ")
+    public static WebElement Downloads;
+    @FindBy(xpath = "//a[normalize-space()='Adres'] ")
+    public static WebElement Addresses;
+    @FindBy(xpath = "//a[contains(text(),'Hesap detayları')]")
+    public static WebElement AccountDetails;
+
+    @FindBy(xpath = "//a[normalize-space()='Randevular']  ")
+    public static WebElement Appointments;
+
+    @FindBy(xpath = "//a[normalize-space()='Randevular'] ")
+    public static WebElement Whislist;
+
+    @FindBy(xpath = "//a[contains(text(),'Destek Talepleri')] ")
+    public static WebElement SupportTickets;
+
+    @FindBy(xpath = "//a[normalize-space()='Takip'] ")
+    public static WebElement Followings ;
+
+    @FindBy(xpath = "(//a[contains(text(),'Çıkış')])[1] ")
+    public static WebElement Logout;
+
+
+    //Seher US002TestCase03
+
+    @FindBy(xpath = "//p[contains(text(),'Siparişler')] ")
+    public static WebElement Orders2;
+
+    @FindBy(xpath = "//div[@class='icon-boxes-wrapper']//div[2]//div[1]")
+    public static WebElement Downloads2;
+
+    @FindBy(xpath = "(//p[normalize-space()='Adresler'])[1] ")
+    public static WebElement Addresses2;
+
+    @FindBy(xpath = "//p[contains(text(),'Hesap Detayları')] ")
+    public static WebElement AccountDetails2;
+
+    @FindBy(xpath = "//p[normalize-space()='Favorilerim']  ")
+    public static WebElement Whislist2;
+
+    @FindBy(xpath = "//p[contains(text(),'Çıkış')] ")
+    public static WebElement Logout2;
 
 
 
 
-
-
-
-
-
-
-
-
-
-    //240-   SEHER
 
 
 
