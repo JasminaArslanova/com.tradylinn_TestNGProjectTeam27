@@ -130,22 +130,22 @@ public TradylinnPage(){PageFactory.initElements(Driver.getDriver(),this);}
 
 
     //116-140 ALI
-    @FindBy(xpath = "//*[text()='Üye Ol']") public WebElement uyeOlHeaderButton;
+    @FindBy(xpath = "//a[@class='register inline-type']") public WebElement uyeOlHeaderButton;
     @FindBy(xpath = "//button[@name='register']") public WebElement kayitOlPopUpButton;
     @FindBy(xpath = "//a[@class='register_as_vendor']") public WebElement registerAsVendorLinkText;
     @FindBy(xpath = "//h2[@class='page-title']") public WebElement vendorRegisterBaslik;
     @FindBy(xpath = "//p[@class='user_email wcfm_ele wcfm_title']") public WebElement vendorRegisterEmailText;
-    @FindBy(xpath = "//input[@id='user_email']") public WebElement vendorRegisterEmailTextBox;
+    @FindBy(xpath = "//input[@data-required_message='Email: This field is required.']") public WebElement vendorRegisterEmailTextBox;
     @FindBy(xpath = "//p[@class='passoword wcfm_ele wcfm_title']") public WebElement vendorRegisterPasswordText;
-    @FindBy(xpath = "//input[@id='passoword']") public WebElement vendorRegisterPasswordTextBox;
+    @FindBy(xpath = "//input[@class='wcfm-text wcfm_ele '][2]") public WebElement vendorRegisterPasswordTextBox;
     @FindBy(xpath = "//p[@class='confirm_pwd wcfm_ele wcfm_title']") public WebElement vendorRegisterConfirmPwText;
-    @FindBy(xpath = "//input[@id='confirm_pwd']") public WebElement vendorRegisterConfirmPwTextBox;
-    @FindBy(xpath = "//input[@id='wcfm_membership_register_button']") public WebElement vendorRegisterPageButton;
+    @FindBy(xpath = "//input[@class='wcfm-text wcfm_ele '][3]") public WebElement vendorRegisterConfirmPwTextBox;
+    @FindBy(xpath = "//input[@class='wcfm_submit_button']") public WebElement vendorRegisterPageButton;
     @FindBy(xpath = "//div[@class='wcfm-message wcfm-error']") public WebElement requiredFieldUyariMesaji;
     @FindBy(xpath = "//h2[@class='wcfm_registration_form_heading']") public WebElement registrationSuccessHeader;
-
-
-
+    @FindBy(xpath = "//div[@class='wcfm-message wcfm-error']") public WebElement registrationCancelledMessage;
+    @FindBy(xpath = "//div[@id='password_strength']") public WebElement passwordStrenghtMessage;
+    @FindBy(xpath = "//div[@class='wcfm-membership-wrapper']") public WebElement registerForm;
 
 
 
