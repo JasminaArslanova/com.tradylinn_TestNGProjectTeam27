@@ -10,10 +10,10 @@ import utilities.Driver;
 
 import java.io.IOException;
 
-public class TC_01 {
+public class TC_02 {
 
     @Test
-    public void test1() throws InterruptedException, IOException {
+    public void test2() throws InterruptedException, IOException {
 
         TradylinnPage tradyPage = new TradylinnPage();
         Actions actions=new Actions(Driver.getDriver());
@@ -22,12 +22,12 @@ public class TC_01 {
 
         // Not ürün sayfasında sonrasinda kategori degisimini asssert edebilmik için
         // ilk kategori degisimindden onceki kategori handle edildi
-        String expectedKategori= "Besin Takviyeleri";
+        String expectedKategori= "Çok Satanlar";
         String ilkKategori= tradyPage.actualKategori.getText();
 
         // ilk kategori screenShot alinir
         actions.sendKeys(Keys.PAGE_DOWN).build().perform();
-        Thread.sleep(5000);
+        Thread.sleep(3000);
         TradyMethod.getScreenshot("ilkKategoriBesin"); // Kategori ilk halde ürünlerde kategori ekran goruntusu
 
         //kullanici düzenle butonuna tiklar
@@ -44,7 +44,7 @@ public class TC_01 {
             }
         }
         // ikinci  olarak yeni kategoride ki expectedKategori degeri cehckbox'i kliklenir
-        TradyMethod.jsClick(tradyPage.besinTakviyeleri);
+        TradyMethod.jsClick(tradyPage.cokSatanlar);
 
         Thread.sleep(5000); // Yeni kategori tıklandigini görebilmek içim beklettik
 
