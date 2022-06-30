@@ -79,7 +79,9 @@ public TradylinnPage(){PageFactory.initElements(Driver.getDriver(),this);}
     @FindBy(xpath = "//button[@id='place_order']") public WebElement siparisiOnayla;
     @FindBy(xpath = "//*[@class='woocommerce-MyAccount-content col-md-9 pt-2']") public WebElement alisVeriseDevam;
     @FindBy(xpath = "//*[text()='Alışverişe Devam Et']") public WebElement alisVeriseDevamButon;
-    @FindBy(xpath = "//*[@class='dismissButton']") public WebElement googleOk;
+    @FindBy(xpath = "//*[text()='Tamam']") public WebElement googleOk;
+    @FindBy(xpath = "(//*[@class='select2-selection select2-selection--single'])[3]") public WebElement teslimatPoint;
+    @FindBy(xpath = "select2-results__option select2-results__option--highlighted") public WebElement teslimatPoint2;
     @FindBy(xpath = "//p[@class='woocommerce-notice woocommerce-notice--success woocommerce-thankyou-order-received order-success']")
     public WebElement thankYouVisible;
     @FindBy(xpath = "(//button[@title='Artı'])[1]") public WebElement artiButonu;
