@@ -15,7 +15,7 @@ public class US010 {
     static TradylinnPage tradylinnPage = new TradylinnPage();
 
     public static void storeGiris() {
-        TradylinnPage trdPage= new TradylinnPage();
+
         Driver.getDriver().get(ConfigReader.getProperty("tradylinnUrl"));
         ReusableMethods.waitFor(3);
         tradylinnPage.girisYapButon.click();
