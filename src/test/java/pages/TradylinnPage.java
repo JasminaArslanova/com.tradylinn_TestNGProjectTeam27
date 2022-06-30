@@ -187,32 +187,6 @@ public TradylinnPage(){PageFactory.initElements(Driver.getDriver(),this);}
 
 
 
-    //190-214 RAMAZAN
-//ososososo
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    //215-239 RAMAZAN
 
 
 
