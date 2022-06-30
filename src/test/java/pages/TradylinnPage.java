@@ -5,7 +5,7 @@ import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 import java.util.List;
 public class TradylinnPage {
-public TradylinnPage(){PageFactory.initElements(Driver.getDriver(),this);}
+    public TradylinnPage(){PageFactory.initElements(Driver.getDriver(),this);}
 
 
     //11-30 JASMINA
@@ -58,16 +58,31 @@ public TradylinnPage(){PageFactory.initElements(Driver.getDriver(),this);}
     @FindBy (xpath = "//tbody//tr") public List <WebElement> specificationList;
     @FindBy(xpath = "(//p[@class='text-uppercase text-center mb-0']) [1]") public WebElement siparisler;
     @FindBy(xpath = "//tbody//tr") public List<WebElement> siparisListesi;
-    //61-90 EVREN
+    @FindBy(xpath = "(//p[@class='text-uppercase text-center mb-0']) [2]") public WebElement indirmeler;
+    @FindBy (xpath = "//tbody//tr") public List <WebElement> indirmelerListesi;
+    @FindBy(xpath = "(//p[@class='text-uppercase text-center mb-0']) [3]") public WebElement adresler;
+    @FindBy(xpath = "//div[@class='woocommerce-Addresses addresses row']") public List<WebElement> adreslerListesi;
+    @FindBy(xpath = "(//p[@class='text-uppercase text-center mb-0']) [4]") public WebElement hesapDetaylari;
+    @FindBy(xpath = "//input[@id='account_first_name']") public WebElement hesapAd;
+    @FindBy(xpath = "//input[@id='account_last_name']") public WebElement hesapSoyad;
+    @FindBy (xpath = "//input[@id='account_display_name']") public WebElement gorunenAd;
+    @FindBy (xpath = "//input[@id='account_email']") public WebElement epostaUpdate;
+    @FindBy (xpath = "//button[@id='user_description-html']") public WebElement metinButonu;
+    @FindBy (xpath = "//textarea[@id='user_description']") public WebElement metinYazisiGonder;
+    @FindBy (xpath = "//input[@id='password_current']") public WebElement currentPassword;
+    @FindBy (xpath = "//input[@id='password_1']") public WebElement newPassword;
+    @FindBy (xpath = "//input[@id='password_2']") public WebElement againNewPassword;
+    @FindBy (xpath = "(//button[@type='submit']) [2]") public WebElement hesapKaydetButonu;
+    @FindBy (xpath = "//div[@class=\"woocommerce-notices-wrapper\"])") public WebElement updateSuccess;
+    @FindBy(xpath = "//div[@class='woocommerce-message alert alert-simple alert-icon alert-close-top alert-success']") public WebElement  hesapDetaylariDegistiMesaji;
+    //78-114 EVREN
     @FindBy(xpath = "(//*[@type='submit'])[2]") public WebElement girisYapButonu;
     @FindBy(xpath = "(//*[text()='Siparişler'])[2]") public WebElement siparislerButonu;
     @FindBy(xpath = "(//*[text()='Hesabım'])[2]") public WebElement hesabimText;
     @FindBy(xpath = "(//*[text()='Siparişler'])[3]") public WebElement siparislerText;
-    @FindBy(xpath = "//a[@class='woocommerce-Button button btn btn-link btn-underline btn-icon-right']")
-    public WebElement urunlereGozAtButtonu;
+    @FindBy(xpath = "//a[@class='woocommerce-Button button btn btn-link btn-underline btn-icon-right']") public WebElement urunlereGozAtButtonu;
     @FindBy(xpath = "//*[text()='Mağaza']") public WebElement magazaText;
-    @FindBy(xpath = "//*[@class='btn-product-icon product_type_simple add_to_cart_button ajax_add_to_cart']")
-    public List<WebElement> sepeteEkle;
+    @FindBy(xpath = "//*[@class='btn-product-icon product_type_simple add_to_cart_button ajax_add_to_cart']") public List<WebElement> sepeteEkle;
     @FindBy(xpath = "(//*[@class='cart-count'])[1]") public WebElement sepet;
     @FindBy(xpath = "//*[@class='widget_shopping_cart_content']") public WebElement sepetVisible;
     @FindBy(xpath = "//a[@class='button wc-forward']") public WebElement sepetiGoruntuleButton;
@@ -79,11 +94,8 @@ public TradylinnPage(){PageFactory.initElements(Driver.getDriver(),this);}
     @FindBy(xpath = "//button[@id='place_order']") public WebElement siparisiOnayla;
     @FindBy(xpath = "//*[@class='woocommerce-MyAccount-content col-md-9 pt-2']") public WebElement alisVeriseDevam;
     @FindBy(xpath = "//*[text()='Alışverişe Devam Et']") public WebElement alisVeriseDevamButon;
-    @FindBy(xpath = "//*[text()='Tamam']") public WebElement googleOk;
-    @FindBy(xpath = "(//*[@class='select2-selection select2-selection--single'])[3]") public WebElement teslimatPoint;
-    @FindBy(xpath = "select2-results__option select2-results__option--highlighted") public WebElement teslimatPoint2;
-    @FindBy(xpath = "//p[@class='woocommerce-notice woocommerce-notice--success woocommerce-thankyou-order-received order-success']")
-    public WebElement thankYouVisible;
+    @FindBy(xpath = "//*[@class='dismissButton']") public WebElement googleOk;
+    @FindBy(xpath = "//p[@class='woocommerce-notice woocommerce-notice--success woocommerce-thankyou-order-received order-success']") public WebElement thankYouVisible;
     @FindBy(xpath = "(//button[@title='Artı'])[1]") public WebElement artiButonu;
     @FindBy(xpath = "//tbody/tr/td[1]/span[1]/bdi[1]") public WebElement artidanSonra;
     @FindBy(xpath = "(//button[normalize-space()='Sepeti Yenile'])[1]") public WebElement yenile;
@@ -100,27 +112,24 @@ public TradylinnPage(){PageFactory.initElements(Driver.getDriver(),this);}
     @FindBy(xpath = "(//div[@class='summary entry-summary'])[1]") public WebElement stokTablosu;
     @FindBy(xpath = "//button[@name='clear_cart']") public WebElement temizle;
     @FindBy(xpath = "//*[text()='Sepetiniz şu anda boş.']") public WebElement sepetBosYazisi;
-
-
-
-
-
-
-    //91-115 AYHAN
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    //115-140 AYHAN
+    @FindBy(xpath = "//span[contains(text(),'Giriş Yap')]") public static WebElement girisButonu;
+    @FindBy(xpath = "//*[@id='wcfm-products']/tbody/tr[2]/td[1]/input") public WebElement urunSecmeCheckBox;
+    @FindBy(xpath = "(//a[contains(text(),'Hesabım')])[1]") public static WebElement Hesabim;
+    @FindBy(xpath = "//*[@id='wcfm-products']/tbody/tr[2]/td[12]/a[5]/span")  public WebElement duzenleButonu;
+    @FindBy (xpath = " //*[@id=\"wcfm-products\"]/tbody/tr[2]/td[8]/a") public WebElement actualKategori;
+    @FindBy(xpath = "//*[@id='product_cats_checklist']/li[1]/input") public WebElement besinTakviyeleri;
+    @FindBy(xpath = "//*[@id='product_cats_checklist']/li[3]/input") public WebElement cokSatanlar;
+    @FindBy(xpath = "//*[@id='product_cats_checklist']/li[5]/input") public WebElement eleElo;
+    @FindBy(xpath = "//*[@id='product_cats_checklist']/li[6]/input") public WebElement evYasam;
+    @FindBy(xpath = "//*[@id='product_cats_checklist']/li[9]/input") public WebElement indirimliUrun;
+    @FindBy(xpath = "//*[@id='product_cats_checklist']/li[10]/input") public WebElement kiMuFi;
+    @FindBy(xpath = "//*[@id='product_cats_checklist']/li[11]/input") public WebElement koKi;
+    @FindBy(xpath = "//*[@id='product_cats_checklist']/li[13]/input") public WebElement modaGiyim;
+    @FindBy(xpath = "//*[@id='product_cats_checklist']/li[16]/input") public WebElement oyuncak;
+    @FindBy(xpath = "//*[@id='product_cats_checklist']/li[19]/input") public WebElement takiAks;
+    @FindBy(xpath = "//*[@id='product_cats_checklist']/li[21]/input") public WebElement yeniUrun;
+    @FindBy (xpath = "//input[@name='submit-data']") public WebElement submitButonu;
 
 
 
@@ -129,58 +138,31 @@ public TradylinnPage(){PageFactory.initElements(Driver.getDriver(),this);}
 
 
 
-
-
-    //116-140 ALI
-    @FindBy(xpath = "//*[text()='Üye Ol']") public WebElement uyeOlHeaderButton;
+    //141-164 ALI
+    @FindBy(xpath = "//a[@class='register inline-type']") public WebElement uyeOlHeaderButton;
     @FindBy(xpath = "//button[@name='register']") public WebElement kayitOlPopUpButton;
     @FindBy(xpath = "//a[@class='register_as_vendor']") public WebElement registerAsVendorLinkText;
     @FindBy(xpath = "//h2[@class='page-title']") public WebElement vendorRegisterBaslik;
     @FindBy(xpath = "//p[@class='user_email wcfm_ele wcfm_title']") public WebElement vendorRegisterEmailText;
-    @FindBy(xpath = "//input[@id='user_email']") public WebElement vendorRegisterEmailTextBox;
+    @FindBy(xpath = "//input[@data-required_message='Email: This field is required.']") public WebElement vendorRegisterEmailTextBox;
     @FindBy(xpath = "//p[@class='passoword wcfm_ele wcfm_title']") public WebElement vendorRegisterPasswordText;
-    @FindBy(xpath = "//input[@id='passoword']") public WebElement vendorRegisterPasswordTextBox;
+    @FindBy(xpath = "//input[@class='wcfm-text wcfm_ele '][2]") public WebElement vendorRegisterPasswordTextBox;
     @FindBy(xpath = "//p[@class='confirm_pwd wcfm_ele wcfm_title']") public WebElement vendorRegisterConfirmPwText;
-    @FindBy(xpath = "//input[@id='confirm_pwd']") public WebElement vendorRegisterConfirmPwTextBox;
-    @FindBy(xpath = "//input[@id='wcfm_membership_register_button']") public WebElement vendorRegisterPageButton;
+    @FindBy(xpath = "//input[@class='wcfm-text wcfm_ele '][3]") public WebElement vendorRegisterConfirmPwTextBox;
+    @FindBy(xpath = "//input[@class='wcfm_submit_button']") public WebElement vendorRegisterPageButton;
     @FindBy(xpath = "//div[@class='wcfm-message wcfm-error']") public WebElement requiredFieldUyariMesaji;
     @FindBy(xpath = "//h2[@class='wcfm_registration_form_heading']") public WebElement registrationSuccessHeader;
+    @FindBy(xpath = "//div[@class='wcfm-message wcfm-error']") public WebElement registrationCancelledMessage;
+    @FindBy(xpath = "//div[@id='password_strength']") public WebElement passwordStrenghtMessage;
+    @FindBy(xpath = "//div[@class='wcfm-membership-wrapper']") public WebElement registerForm;
+    @FindBy (xpath = "(//span[@class='text'])[4]") public WebElement urunlerTextLink;
+    @FindBy (id = "wcfm_products_manage_form_attribute_head") public WebElement attributes;
+    @FindBy (id = "attributes_value_1") public WebElement ddColor;
+    @FindBy (id = "attributes_value_2") public WebElement ddSize;
+    @FindBy (id = "attributes_is_active_1") public WebElement attributes_Color;
+    @FindBy (id = "attributes_is_active_2") public WebElement attributes_Size;
 
-
-
-
-
-
-
-
-
-
-    //140-164 MELEK
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    //165-189 MUSTAFA
+    //165-189 MELEK
 
 
 
@@ -205,8 +187,8 @@ public TradylinnPage(){PageFactory.initElements(Driver.getDriver(),this);}
 
 
 
-    //190-214 RAMAZAN
-//ososososo
+    //190-214 MUSTAFA
+
 
 
 
@@ -255,7 +237,7 @@ public TradylinnPage(){PageFactory.initElements(Driver.getDriver(),this);}
 
 
 
-    //240-   SEHER
+    //240-265 RAMAZAN
 
 
 
@@ -280,43 +262,7 @@ public TradylinnPage(){PageFactory.initElements(Driver.getDriver(),this);}
 
 
 
+    //266-   SEHER
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    // akif 285-303 (30-61. satırların devamı)
-    @FindBy(xpath = "(//p[@class='text-uppercase text-center mb-0']) [2]") public WebElement indirmeler;
-    @FindBy (xpath = "//tbody//tr") public List <WebElement> indirmelerListesi;
-    @FindBy(xpath = "(//p[@class='text-uppercase text-center mb-0']) [3]") public WebElement adresler;
-    @FindBy(xpath = "//div[@class='woocommerce-Addresses addresses row']") public List<WebElement> adreslerListesi;
-    @FindBy(xpath = "(//p[@class='text-uppercase text-center mb-0']) [4]") public WebElement hesapDetaylari;
-    @FindBy(xpath = "//input[@id='account_first_name']") public WebElement hesapAd;
-    @FindBy(xpath = "//input[@id='account_last_name']") public WebElement hesapSoyad;
-    @FindBy (xpath = "//input[@id='account_display_name']") public WebElement gorunenAd;
-    @FindBy (xpath = "//input[@id='account_email']") public WebElement epostaUpdate;
-    @FindBy (xpath = "//button[@id='user_description-html']") public WebElement metinButonu;
-    @FindBy (xpath = "//textarea[@id='user_description']") public WebElement metinYazisiGonder;
-    @FindBy (xpath = "//input[@id='password_current']") public WebElement currentPassword;
-    @FindBy (xpath = "//input[@id='password_1']") public WebElement newPassword;
-    @FindBy (xpath = "//input[@id='password_2']") public WebElement againNewPassword;
-    @FindBy (xpath = "(//button[@type='submit']) [2]") public WebElement hesapKaydetButonu;
-    @FindBy (xpath = "//div[@class=\"woocommerce-notices-wrapper\"])") public WebElement updateSuccess;
-    @FindBy(xpath = "//div[@class='woocommerce-message alert alert-simple alert-icon alert-close-top alert-success']") public WebElement  hesapDetaylariDegistiMesaji;
-    // akif 289-303 (30-61. satırların devamı) // Tüm locatelerin sonu
 }
