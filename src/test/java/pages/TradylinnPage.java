@@ -146,12 +146,12 @@ public TradylinnPage(){PageFactory.initElements(Driver.getDriver(),this);}
     @FindBy(xpath = "//div[@class='wcfm-message wcfm-error']") public WebElement registrationCancelledMessage;
     @FindBy(xpath = "//div[@id='password_strength']") public WebElement passwordStrenghtMessage;
     @FindBy(xpath = "//div[@class='wcfm-membership-wrapper']") public WebElement registerForm;
-
-
-
-
-
-
+    @FindBy (xpath = "(//span[@class='text'])[4]") public WebElement urunlerTextLink;
+    @FindBy (id = "wcfm_products_manage_form_attribute_head") public WebElement attributes;
+    @FindBy (id = "attributes_value_1") public WebElement ddColor;
+    @FindBy (id = "attributes_value_2") public WebElement ddSize;
+    @FindBy (id = "attributes_is_active_1") public WebElement attributes_Color;
+    @FindBy (id = "attributes_is_active_2") public WebElement attributes_Size;
 
     //140-164 MELEK
 
@@ -316,5 +316,5 @@ public TradylinnPage(){PageFactory.initElements(Driver.getDriver(),this);}
     @FindBy (xpath = "(//button[@type='submit']) [2]") public WebElement hesapKaydetButonu;
     @FindBy (xpath = "//div[@class=\"woocommerce-notices-wrapper\"])") public WebElement updateSuccess;
     @FindBy(xpath = "//div[@class='woocommerce-message alert alert-simple alert-icon alert-close-top alert-success']") public WebElement  hesapDetaylariDegistiMesaji;
-    // akif 289-303 (30-61. satırların devamı) // Tüm locatelerin sonu
+    // akif 289-303 (30-61. satırların devamı)// Tüm locatelerin sonu
 }
