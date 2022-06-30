@@ -82,6 +82,22 @@ public TradylinnPage(){PageFactory.initElements(Driver.getDriver(),this);}
     @FindBy(xpath = "//*[@class='dismissButton']") public WebElement googleOk;
     @FindBy(xpath = "//p[@class='woocommerce-notice woocommerce-notice--success woocommerce-thankyou-order-received order-success']")
     public WebElement thankYouVisible;
+    @FindBy(xpath = "(//button[@title='Artı'])[1]") public WebElement artiButonu;
+    @FindBy(xpath = "//tbody/tr/td[1]/span[1]/bdi[1]") public WebElement artidanSonra;
+    @FindBy(xpath = "(//button[normalize-space()='Sepeti Yenile'])[1]") public WebElement yenile;
+    @FindBy(xpath = "(//button[@title='Eksi'])[1]") public WebElement eksiButonu;
+    @FindBy(xpath = "//tbody/tr[1]/td[1]/a[1]") public WebElement sepettekiUrun;
+    @FindBy(xpath = "//tbody/tr[2]/td[1]/a[1]") public WebElement sepettekiIkinciUrun;
+    @FindBy(xpath = "//tbody/tr[3]/td[1]/a[1]") public WebElement sepettekiUcuncuUrun;
+    @FindBy(xpath = "//tbody/tr[4]/td[1]/a[1]") public WebElement sepettekiDorduncuUrun;
+    @FindBy(xpath = "//tbody/tr[5]/td[1]/a[1]") public WebElement sepettekiBesinciUrun;
+    @FindBy(xpath = "(//p[@class='stock in-stock'])[1]") public WebElement stokMiktari;
+    @FindBy(xpath = "(//input[@id='quantity_62bcf52055470'])[1]") public WebElement urunMiktar;
+    @FindBy(xpath = "(//button[normalize-space()='Sepete Ekle'])[1]") public WebElement urunSepeteEkle;
+    @FindBy(xpath = "//*[@class='woocommerce-notices-wrapper']") public WebElement urunSepeteEklendiYazisi;
+    @FindBy(xpath = "(//div[@class='summary entry-summary'])[1]") public WebElement stokTablosu;
+    @FindBy(xpath = "//button[@name='clear_cart']") public WebElement temizle;
+    @FindBy(xpath = "//*[text()='Sepetiniz şu anda boş.']") public WebElement sepetBosYazisi;
 
 
 
