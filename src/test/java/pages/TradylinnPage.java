@@ -138,6 +138,34 @@ public TradylinnPage(){PageFactory.initElements(Driver.getDriver(),this);}
 
 
     //140-164 MELEK
+    @FindBy(xpath = "//a[@class='login inline-type']") public WebElement girisYap;
+    @FindBy(xpath = "(//input[@class='woocommerce-Input woocommerce-Input--text input-text'])[1]") public WebElement usernameKutusu;
+    @FindBy(xpath = "(//input[@id='password'])[1]") public WebElement passworddKutusu;
+    @FindBy(xpath="(//button[@type='submit'])[1]") public WebElement girisYapButton;
+    @FindBy(xpath="//li[@id='menu-item-1074']")  public WebElement hesabim;
+    @FindBy(xpath="//div[@class='page-title-bar']  ") public WebElement storemanagerText;
+    @FindBy(xpath = "//h2[text()='Manage Customers']") public WebElement musterilersayfaText;
+    @FindBy(xpath="//li[@class='woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--wcfm-store-manager']") public WebElement storeManager1;
+    @FindBy(xpath="(//span[@class='text'])[7]") public WebElement musteriler;
+    @FindBy(xpath="//th[@class='sorting_asc']") public WebElement musteriadi;
+    @FindBy(xpath="(//th[@class='sorting_disabled'])[2]") public WebElement musteriemail;
+     @FindBy(xpath = "(//th[@class='sorting_disabled'])[5]")public WebElement harcananPara;
+    @FindBy(xpath = "(//th[@class='sorting_disabled'])[6]")public WebElement sonSiparis;
+    @FindBy(xpath="(//span[@class='text'])[19]") public WebElement yeniEkleButon;
+    @FindBy(xpath="//span[text()='PDF']") public WebElement pdfButon;
+    @FindBy(xpath="//span[text()='Excel']") public WebElement excelbuton;
+    @FindBy(xpath="//span[text()='CSV']") public WebElement csvbuton;
+    @FindBy(xpath="(//a[@href='https://tradylinn.com/product-category/indirimli-urunler/'])[4]") public WebElement indirimliUrunlerTumunuGor;
+    @FindBy(xpath = "//select[@name='orderby']") public WebElement dropDown;
+    @FindBy(xpath="(//h2[@class='elementor-heading-title elementor-size-default'])[3]") public WebElement TumunuGorYazi;
+    @FindBy(xpath="//div[@class='wcfm-message']") public WebElement submitonay;
+    @FindBy(xpath="//*[text()='Sırala']") public WebElement indirimliUrunlerSayfa;
+    @FindBy(xpath="//input[@id='user_name']") public WebElement userName;
+    @FindBy(xpath="//input[@class='wcfm_submit_button']") public WebElement kaydetButon;
+    @FindBy(xpath="(//a[@class='wcfm_menu_item '])[10]") public WebElement takipciler;
+    @FindBy(xpath="//div[@class='wcfm-container wcfm-top-element-container']") public WebElement takipciBilgi;
+    @FindBy(xpath="//select[@class='count form-control']") public WebElement dropDownn2;
+
 
 
 
@@ -299,6 +327,6 @@ public TradylinnPage(){PageFactory.initElements(Driver.getDriver(),this);}
     @FindBy (xpath = "//input[@id='password_2']") public WebElement againNewPassword;
     @FindBy (xpath = "(//button[@type='submit']) [2]") public WebElement hesapKaydetButonu;
     @FindBy (xpath = "//div[@class=\"woocommerce-notices-wrapper\"])") public WebElement updateSuccess;
-    @FindBy(xpath = "//div[@class='woocommerce-message alert alert-simple alert-icon alert-close-top alert-success']") public WebElement  hesapDetaylariDegistiMesaji;
+    @FindBy(xpath = "//div[@class='woocommerce-message alert alert-simple alert-icon alert-close-top alert-su   ccess']") public WebElement  hesapDetaylariDegistiMesaji;
     // akif 289-303 (30-61. satırların devamı) // Tüm locatelerin sonu
 }
