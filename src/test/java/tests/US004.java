@@ -12,6 +12,7 @@ import org.testng.annotations.Test;
 import pages.TradylinnPage;
 import utilities.ConfigReader;
 import utilities.Driver;
+import utilities.ReusableMethods;
 import utilities.TestBaseRapor;
 
 import java.time.Duration;
@@ -69,7 +70,7 @@ public class US004 extends TestBaseRapor {
     }
 
     @Test
-    public void test01() throws InterruptedException {
+    public void test01() {
         /*
         url` ye gidilir
         Giris yap' a tiklanir
@@ -83,20 +84,20 @@ public class US004 extends TestBaseRapor {
         Urunlerin sepette gorundugu test edilir
          */
         giris();
-        Thread.sleep(2000);
+        ReusableMethods.waitFor(2);
         for (int i = 0; i < 5; i++) {
             js.executeScript("arguments[0].click();", trady.sepeteEkle.get(rnd.nextInt(5)));
         }
         extentTest.info("Rastgele 5 urun sepete eklendi");
         js.executeScript("arguments[0].click();", trady.sepet);
-        Thread.sleep(2000);
+        ReusableMethods.waitFor(2);
         Assert.assertTrue(trady.sepetVisible.isDisplayed());
         extentTest.pass("Urunlerin sepete eklendigi goruldu");
-        Thread.sleep(10000);
+        ReusableMethods.waitFor(10);
     }
 
     @Test
-    public void test02() throws InterruptedException {
+    public void test02() {
         /*
         url` ye gidilir
         Giris yap' a tiklanir
@@ -115,49 +116,49 @@ public class US004 extends TestBaseRapor {
         Urunun azaltildigi test edilir
          */
         giris();
-        Thread.sleep(2000);
+        ReusableMethods.waitFor(2);
         for (int i = 0; i < 5; i++) {
             js.executeScript("arguments[0].click();", trady.sepeteEkle.get(rnd.nextInt(5)));
         }
         extentTest.info("Rastgele 5 urun sepete eklendi");
         js.executeScript("arguments[0].click();", trady.sepet);
-        Thread.sleep(2000);
+        ReusableMethods.waitFor(2);
         Assert.assertTrue(trady.sepetVisible.isDisplayed());
         extentTest.pass("Urunlerin sepete eklendigi goruldu");
-        Thread.sleep(10000);
+        ReusableMethods.waitFor(10);
         try {
             trady.sepetiGoruntuleButton.click();
         } catch (Exception e) {
             js.executeScript("arguments[0].click();", trady.sepetiGoruntuleButton);
         }
-        Thread.sleep(2000);
+        ReusableMethods.waitFor(2);
         trady.artiButonu.click();
-        Thread.sleep(2000);
+        ReusableMethods.waitFor(2);
         String arttirmadanOnce = trady.artidanSonra.getText();
         try {
             trady.yenile.click();
         } catch (Exception e) {
             js.executeScript("arguments[0].click();", trady.yenile);
         }
-        Thread.sleep(90000);
+        ReusableMethods.waitFor(50);
         String arttirdiktanSonra = trady.artidanSonra.getText();
         System.out.println(arttirmadanOnce + " " + arttirdiktanSonra);
         Assert.assertNotEquals(arttirmadanOnce, arttirdiktanSonra);
         trady.eksiButonu.click();
-        Thread.sleep(2000);
+        ReusableMethods.waitFor(2);
         try {
             trady.yenile.click();
         } catch (Exception e) {
             js.executeScript("arguments[0].click();", trady.yenile);
         }
-        Thread.sleep(60000);
+        ReusableMethods.waitFor(50);
         String eksilttiktenSonra = trady.artidanSonra.getText();
         Assert.assertEquals(arttirmadanOnce, eksilttiktenSonra);
 
     }
 
     @Test
-    public void test03() throws InterruptedException {
+    public void test03() {
         /*
         url` ye gidilir
         Giris yap' a tiklanir
@@ -176,28 +177,28 @@ public class US004 extends TestBaseRapor {
         Urunun arttirildigi test edilir
         Eksi butonu ile urun miktari azaltilir
         Urunun azaltildigi test edilir
-        *Urune tiklanir stok miktarinin gorunur oldugu test edilir
+        Urune tiklanir stok miktarinin gorunur oldugu test edilir
         Stok fazlasi urunun sepete eklenemedigi test edilir ve sepetimden sepeti goguntuleye tiklanir
         Urun miktari arti eksi butonlari ile arttirilir veya azaltilir
         Update cart ile rakamin guncellendigi test edilir
          */
         giris();
-        Thread.sleep(2000);
+        ReusableMethods.waitFor(2);
         for (int i = 0; i < 5; i++) {
             js.executeScript("arguments[0].click();", trady.sepeteEkle.get(rnd.nextInt(5)));
         }
         extentTest.info("Rastgele 5 urun sepete eklendi");
         js.executeScript("arguments[0].click();", trady.sepet);
-        Thread.sleep(2000);
+        ReusableMethods.waitFor(2);
         Assert.assertTrue(trady.sepetVisible.isDisplayed());
         extentTest.pass("Urunlerin sepete eklendigi goruldu");
-        Thread.sleep(10000);
+        ReusableMethods.waitFor(10);
         try {
             trady.sepetiGoruntuleButton.click();
         } catch (Exception e) {
             js.executeScript("arguments[0].click();", trady.sepetiGoruntuleButton);
         }
-        Thread.sleep(2000);
+        ReusableMethods.waitFor(2);
         String arttirmadanOnce = trady.artidanSonra.getText();
         trady.artiButonu.click();
         try {
@@ -205,18 +206,18 @@ public class US004 extends TestBaseRapor {
         } catch (Exception e) {
             js.executeScript("arguments[0].click();", trady.yenile);
         }
-        Thread.sleep(60000);
+        ReusableMethods.waitFor(50);
         String arttirdiktanSonra = trady.artidanSonra.getText();
         System.out.println(arttirmadanOnce + " " + arttirdiktanSonra);
         Assert.assertNotEquals(arttirmadanOnce, arttirdiktanSonra);
         trady.eksiButonu.click();
-        Thread.sleep(2000);
+        ReusableMethods.waitFor(2);
         try {
             trady.yenile.click();
         } catch (Exception e) {
             js.executeScript("arguments[0].click();", trady.yenile);
         }
-        Thread.sleep(60000);
+        ReusableMethods.waitFor(50);
         String eksilttiktenSonra = trady.artidanSonra.getText();
         Assert.assertEquals(arttirmadanOnce, eksilttiktenSonra);
         try {
@@ -238,37 +239,89 @@ public class US004 extends TestBaseRapor {
             Assert.assertFalse(trady.urunSepeteEklendiYazisi.isDisplayed());
         }else System.out.println("Stok miktari yok");
 
-        //Assert.assertTrue(trady.stokMiktari.isDisplayed());
-
         try {
             trady.sepet.click();
         } catch (Exception e) {
             js.executeScript("arguments[0].click();", trady.sepet);
         }
 
-        Thread.sleep(2000);
+        ReusableMethods.waitFor(2);
         try {
             trady.sepetiGoruntuleButton.click();
         } catch (Exception e) {
             js.executeScript("arguments[0].click();", trady.sepetiGoruntuleButton);
         }
         trady.artiButonu.click();
-        Thread.sleep(2000);
+        ReusableMethods.waitFor(2);
         String artisOncesi = trady.artidanSonra.getText();
         try {
             trady.yenile.click();
         } catch (Exception e) {
             js.executeScript("arguments[0].click();", trady.yenile);
         }
-        Thread.sleep(30000);
+        ReusableMethods.waitFor(45);
         String artisSonrasi = trady.artidanSonra.getText();
         System.out.println(artisOncesi + " " + artisSonrasi);
         Assert.assertNotEquals(artisOncesi, artisSonrasi);
 
     }
+    public void urunEkle() {
+        ReusableMethods.waitFor(2);
+        for (int i = 0; i < 5; i++) {
+            js.executeScript("arguments[0].click();", trady.sepeteEkle.get(rnd.nextInt(5)));
+        }
+        extentTest.info("Rastgele 5 urun sepete eklendi");
+        ReusableMethods.waitFor(20);
+        js.executeScript("arguments[0].click();", trady.sepet);
+        ReusableMethods.waitFor(2);
+        Assert.assertTrue(trady.sepetVisible.isDisplayed());
+        extentTest.pass("Urunlerin sepete eklendigi goruldu");
+        ReusableMethods.waitFor(2);
+        try {
+            trady.sepetiGoruntuleButton.click();
+        } catch (Exception e) {
+            js.executeScript("arguments[0].click();", trady.sepetiGoruntuleButton);
+        }
+        js.executeScript("arguments[0].click();", trady.sepettekiUrun);
+
+        String urunTablo = trady.stokTablosu.getText();
+        if (urunTablo.contains("adet stokta")){
+            System.out.println("Stok miktari goruntulendi");
+        }else System.out.println("Stok miktari yok");
+        Driver.getDriver().navigate().back();
+        js.executeScript("arguments[0].click();", trady.sepettekiIkinciUrun);
+
+        String urunTablo2 = trady.stokTablosu.getText();
+        if (urunTablo2.contains("adet stokta")){
+            System.out.println("Stok miktari goruntulendi");
+        }else System.out.println("Stok miktari yok");
+        Driver.getDriver().navigate().back();
+        js.executeScript("arguments[0].click();", trady.sepettekiUcuncuUrun);
+
+        String urunTablo3 = trady.stokTablosu.getText();
+        if (urunTablo3.contains("adet stokta")){
+            System.out.println("Stok miktari goruntulendi");
+        }else System.out.println("Stok miktari yok");
+        Driver.getDriver().navigate().back();
+        js.executeScript("arguments[0].click();", trady.sepettekiDorduncuUrun);
+
+        String urunTablo4 = trady.stokTablosu.getText();
+        if (urunTablo4.contains("adet stokta")){
+            System.out.println("Stok miktari goruntulendi");
+        }else System.out.println("Stok miktari yok");
+        Driver.getDriver().navigate().back();
+        js.executeScript("arguments[0].click();", trady.sepettekiBesinciUrun);
+
+        String urunTablo5 = trady.stokTablosu.getText();
+        if (urunTablo5.contains("adet stokta")){
+            System.out.println("Stok miktari goruntulendi");
+        }else System.out.println("Stok miktari yok");
+        ReusableMethods.waitFor(5);
+        Driver.getDriver().navigate().back();
+    }
 
     @Test
-    public void test04() throws InterruptedException {
+    public void test04() {
         /*
         url` ye gidilir
         Giris yap' a tiklanir
@@ -287,65 +340,92 @@ public class US004 extends TestBaseRapor {
         Sepetiniz su anda bos yazisinin gorunurlugu test edilir
          */
         giris();
-        Thread.sleep(2000);
-        for (int i = 0; i < 5; i++) {
-            js.executeScript("arguments[0].click();", trady.sepeteEkle.get(rnd.nextInt(5)));
-        }
-        extentTest.info("Rastgele 5 urun sepete eklendi");
-        Thread.sleep(10000);
-        js.executeScript("arguments[0].click();", trady.sepet);
-        Thread.sleep(2000);
-        Assert.assertTrue(trady.sepetVisible.isDisplayed());
-        extentTest.pass("Urunlerin sepete eklendigi goruldu");
-        Thread.sleep(2000);
-        try {
-            trady.sepetiGoruntuleButton.click();
-        } catch (Exception e) {
-            js.executeScript("arguments[0].click();", trady.sepetiGoruntuleButton);
-        }
+        urunEkle();
 
-        js.executeScript("arguments[0].click();", trady.sepettekiUrun);
-
-        //String[] stokYazisi = trady.stokMiktari.getText().split(" ");
-        String urunTablo = trady.stokTablosu.getText();
-        if (urunTablo.contains("adet stokta")){
-            System.out.println("Stok miktari goruntulendi");
-        }else System.out.println("Stok miktari yok");
-        Driver.getDriver().navigate().back();
-        js.executeScript("arguments[0].click();", trady.sepettekiIkinciUrun);
-        //String[] stokYazisi2 = trady.stokMiktari.getText().split(" ");
-        String urunTablo2 = trady.stokTablosu.getText();
-        if (urunTablo2.contains("adet stokta")){
-            System.out.println("Stok miktari goruntulendi");
-        }else System.out.println("Stok miktari yok");
-        Driver.getDriver().navigate().back();
-        js.executeScript("arguments[0].click();", trady.sepettekiUcuncuUrun);
-        //String[] stokYazisi3 = trady.stokMiktari.getText().split(" ");
-        String urunTablo3 = trady.stokTablosu.getText();
-        if (urunTablo3.contains("adet stokta")){
-            System.out.println("Stok miktari goruntulendi");
-        }else System.out.println("Stok miktari yok");
-        Driver.getDriver().navigate().back();
-        js.executeScript("arguments[0].click();", trady.sepettekiDorduncuUrun);
-        //String[] stokYazisi4 = trady.stokMiktari.getText().split(" ");
-        String urunTablo4 = trady.stokTablosu.getText();
-        if (urunTablo4.contains("adet stokta")){
-            System.out.println("Stok miktari goruntulendi");
-        }else System.out.println("Stok miktari yok");
-        Driver.getDriver().navigate().back();
-        js.executeScript("arguments[0].click();", trady.sepettekiBesinciUrun);
-        //String[] stokYazisi5 = trady.stokMiktari.getText().split(" ");
-        String urunTablo5 = trady.stokTablosu.getText();
-        if (urunTablo5.contains("adet stokta")){
-            System.out.println("Stok miktari goruntulendi");
-        }else System.out.println("Stok miktari yok");
-        Thread.sleep(5000);
-        Driver.getDriver().navigate().back();
         try {
             trady.temizle.click();
         } catch (Exception e) {
             js.executeScript("arguments[0].click();", trady.temizle);
         }
         Assert.assertTrue(trady.sepetBosYazisi.isDisplayed());
+    }
+
+    @Test
+    public void test05() {
+        /*
+        url` ye gidilir
+        Giris yap' a tiklanir
+        Gecerli kullanici bilgileri girilir
+        Giris yap' a tiklanir
+        Hesabim sayfasina giris yapildigi test edilir
+        Acilan sayfada siparisler bolumune tiklanir
+        Acilan sayfada Browse Products(Urunlere Goz At) butonuna tiklanir
+        Magaza butonunun gorunur oldugu test edilir
+        Rastgele 5 urun secilir ve sepete eklenir
+        sepetim e clikck yapilir
+        Urunlerin sepette gorundugu test edilir
+        sepeti goruntuleye click yapilir
+        Urunun stok miktarinin gorunurlugu test edilir
+        Sepet sayfasinda kupon seceneginin gorunur oldugu test edilir
+         */
+        giris();
+        urunEkle();
+        Assert.assertTrue(trady.kupon.isDisplayed());
+        Assert.assertTrue(trady.kupon2.isDisplayed());
+
+    }
+
+    @Test
+    public void test06() {
+        /*
+        url` ye gidilir
+        Giris yap' a tiklanir
+        Gecerli kullanici bilgileri girilir
+        Giris yap' a tiklanir
+        Hesabim sayfasina giris yapildigi test edilir
+        Acilan sayfada siparisler bolumune tiklanir
+        Acilan sayfada Browse Products(Urunlere Goz At) butonuna tiklanir
+        Magaza butonunun gorunur oldugu test edilir
+        Rastgele 5 urun secilir ve sepete eklenir
+        sepetim e clikck yapilir
+        Urunlerin sepette gorundugu test edilir
+        sepeti goruntuleye click yapilir
+        Urunun stok miktarinin gorunurlugu test edilir
+        Alisverise devam et butonunun gorunurlugu test edilir
+         */
+        giris();
+        urunEkle();
+        Assert.assertTrue(trady.alisVeriseDevam.isDisplayed());
+    }
+
+    @Test
+    public void test07() {
+        /*
+        url` ye gidilir
+        Giris yap' a tiklanir
+        Gecerli kullanici bilgileri girilir
+        Giris yap' a tiklanir
+        Hesabim sayfasina giris yapildigi test edilir
+        Acilan sayfada siparisler bolumune tiklanir
+        Acilan sayfada Browse Products(Urunlere Goz At) butonuna tiklanir
+        Magaza butonunun gorunur oldugu test edilir
+        Rastgele 5 urun secilir ve sepete eklenir
+        sepetim e clikck yapilir
+        Urunlerin sepette gorundugu test edilir
+        sepeti goruntuleye click yapilir
+        Urunun stok miktarinin gorunurlugu test edilir
+        Odeme sayfasina git butonuna tiklanir
+        Fatura detaylarinin ve toplam rakamin gorunur oldugu test edilir
+         */
+        giris();
+        urunEkle();
+        try {
+            trady.odemeSayfasiButton.click();
+        } catch (Exception e) {
+            js.executeScript("arguments[0].click();", trady.odemeSayfasiButton);
+        }
+        Assert.assertTrue(trady.faturaDetaylari.isDisplayed());
+        Assert.assertTrue(trady.toplamRakam.isDisplayed());
+
     }
 }
