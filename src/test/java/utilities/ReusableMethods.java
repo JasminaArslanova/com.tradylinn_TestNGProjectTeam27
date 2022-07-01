@@ -144,4 +144,20 @@ public class ReusableMethods {
 
         return element;
     }
+
+    public static void tradylinnStoreManager(){
+        Driver.getDriver().get(ConfigReader.getProperty("tradylinnUrl"));
+        waitFor(3);
+        Driver.getDriver().findElement(By.xpath("//span[contains(text(),'Giriş Yap')]")).click();
+        waitFor(3);
+        Driver.getDriver().findElement(By.xpath("(//*[@type='text'])[1]")).sendKeys(ConfigReader.getProperty("usermail"));
+        Driver.getDriver().findElement(By.xpath("(//*[@name='password'])[1]")).sendKeys(ConfigReader.getProperty("userpass"));
+        Driver.getDriver().findElement(By.xpath("(//input[@type='checkbox'])[1]")).click();
+        Driver.getDriver().findElement(By.xpath("(//*[@type='submit'])[1]")).click();
+        waitFor(3);
+        Driver.getDriver().findElement(By.xpath("//*[@id='menu-item-1074']")).click();
+        waitFor(3);
+        Driver.getDriver().findElement(By.xpath("(//*[@class='woocommerce-MyAccount-navigation col-md-3 mb-8']//li)[2]")).click();
+
+    }
 }
