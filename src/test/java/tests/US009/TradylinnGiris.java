@@ -13,12 +13,14 @@ public class TradylinnGiris {
 
     public static void trdGiris() {
         TradylinnPage trdPage= new TradylinnPage();
-        Driver.getDriver().get(ConfigReader.getProperty("trdUrl"));
+        Driver.getDriver().get(ConfigReader.getProperty("tradyUrl"));
         trdPage.girisYapButon.click();
-        trdPage.emailKutusu.sendKeys(ConfigReader.getProperty("gecerliEmail"));
-        trdPage.passwordKutusu.sendKeys(ConfigReader.getProperty("gecerliPassword"));
+        trdPage.emailKutusu.sendKeys(ConfigReader.getProperty("tradyEmail"));
+        trdPage.passwordKutusu.sendKeys(ConfigReader.getProperty("tradyPassword"));
         trdPage.ikinciGirisYapButonu.click();
         ReusableMethods.waitFor(10);
+
+
     }
 
 }
