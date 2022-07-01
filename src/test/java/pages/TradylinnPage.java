@@ -179,11 +179,116 @@ public TradylinnPage(){PageFactory.initElements(Driver.getDriver(),this);}
 
 
     //165-189 MUSTAFA
+//US_011 Locatur
+    @FindBy(xpath = "//*[@id=\"menu-item-1074\"]/a")
+    public WebElement myAccountButton;
+
+    @FindBy(xpath = "//*[@id=\"username\"]")
+    public WebElement userNameButton;
+
+    @FindBy(xpath = "//*[@id=\"password\"]")
+    public WebElement passwordButton;
+
+    @FindBy(xpath = "//button[@class='woocommerce-button button woocommerce-form-login__submit']")
+    public WebElement girisLoginTusu;
+
+    @FindBy(xpath = "//*[@id=\"main\"]/div/div/div/div/div/div/nav/ul/li[2]/a/text()")
+    public WebElement storeManagerButtonn;
+
+    @FindBy(xpath = "//*[@id=\"wcfm_menu\"]/div[5]/a/span[2]")
+    public WebElement productButton;
+
+    @FindBy(xpath = "//*[@id=\"add_new_product_dashboard\"]/span[2]")
+    public WebElement addNewProductButton;
+
+    @FindBy(xpath = "//*[@id=\"wcfm_products_manage_form_toptan-urun-gosterme-ayarlari_head\"]/div")
+    public WebElement topUrunGostAyarButton;
+
+    @FindBy(xpath = "//*[@id=\"piecetype\"]")
+    public WebElement pieceTypeButton;
+
+    @FindBy(xpath = "//*[@id=\"unitpercart\"]")
+    public WebElement unitsPerPieceButton;
+
+    @FindBy(xpath = "//*[@id=\"minorderqtytr\"]")
+    public WebElement minOrderQuantityButton;
 
 
+//US_13 LOCATUR
+
+    @FindBy(xpath = "//*[@id=\"menu-item-1074\"]/a")
+    public  WebElement MyAccountButton;
+
+   /* @FindBy(xpath = "//*[@id=\"username\"]")
+    public  WebElement userNameButton;
+
+    @FindBy(xpath = "//*[@id=\"password\"]")
+    public  WebElement passwordButton;
+
+    @FindBy(xpath = "//button[@class='woocommerce-button button woocommerce-form-login__submit']")
+    public WebElement girisLoginTusu;*/
+
+    @FindBy(xpath = "/html/body/div[1]/div[1]/div/div/h2")
+    public  WebElement hesabimYazisi;
 
 
+   /* @FindBy(xpath = "//*[text()='Store Manager']")
+    public  WebElement storeManagerButtonn;*/
 
+    @FindBy(xpath = "//*[@id=\"wcfm_menu\"]/div[7]/a/span[2]")
+    public  WebElement kuponlarButton;
+
+    @FindBy(xpath = "//a[@id='add_new_coupon_dashboard']")
+    public  WebElement kuponYeniEkleButton;
+
+    @FindBy(xpath = "//*[@id=\"wcfm-content\"]/div[2]/div[2]/div[2]/h2")
+    public  WebElement AddCouponYazisi;
+
+
+    @FindBy(xpath = "//*[@id=\"title\"]")
+    public  WebElement codeButton;
+
+    @FindBy(xpath = "//*[@id=\"description\"]")
+    public  WebElement descriptionButton;
+
+    @FindBy(xpath = "//*[@id=\"discount_type\"]")
+    public  WebElement discountTypeButton;
+
+    @FindBy(xpath = "//*[@id=\"expiry_date\"]")
+    public  WebElement CouponExpiryDateButton;
+
+    @FindBy(xpath = "//*[@id=\"free_shipping\"]")
+    public  WebElement AllowFreeShippingButton;
+
+    @FindBy(xpath = "//*[@id=\"show_on_store\"]")
+    public  WebElement ShowOnStoreButton;
+
+    @FindBy(xpath = "//*[@id=\"individual_use\"]")
+    public  WebElement IndividualUseOnlyButton;
+
+    @FindBy(xpath = "//*[@id=\"exclude_sale_items\"]")
+    public  WebElement ExcludeSaleItemsButton;
+
+    @FindBy(xpath = "//*[@id=\"coupons_manage_restriction_expander\"]/span[1]/span[1]/span/ul/li/input")
+    public  WebElement ProductsButton;
+
+    @FindBy(xpath = "//*[@id=\"coupons_manage_restriction_expander\"]/span[2]/span[1]/span/ul/li/input")
+    public  WebElement ExcludeProductsButton;
+
+    @FindBy(xpath = "//*[@id=\"coupons_manage_restriction_expander\"]/span[3]/span[1]/span/ul/li/input")
+    public  WebElement ProductCategoriesButton;
+
+    @FindBy(xpath = "//*[@id=\"coupons_manage_restriction_expander\"]/span[4]/span[1]/span/ul/li/input")
+    public  WebElement ExcludeCategoriesButton;
+
+    @FindBy(xpath = "//*[@id=\"customer_email\"]")
+    public  WebElement EmailRestrictionsButton;
+
+    @FindBy(xpath = "//*[@id=\"coupons_manage_limit\"]")
+    public  WebElement LimitButton;
+
+    @FindBy(xpath = "//*[@id=\"wcfm_coupon_manager_submit_button\"]")
+    public  WebElement SubmitButton;
 
 
 
