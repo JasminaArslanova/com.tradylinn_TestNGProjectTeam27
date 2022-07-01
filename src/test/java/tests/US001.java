@@ -15,7 +15,7 @@ import utilities.TestBaseRapor;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
-public class US001 extends TestBaseRapor {
+public class  US001 extends TestBaseRapor {
 
     static TradylinnPage tradylinnPage = new TradylinnPage();
     static Actions actions = new Actions(Driver.getDriver());
