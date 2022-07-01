@@ -362,5 +362,12 @@ public class TradylinnPage {
 
 
 
-    @FindBy(xpath = "(//*[@class='select2-selection select2-selection--single'])[3]") public WebElement teslimatPoint;
+    @FindBy(xpath = "(//*[@class='select2-selection select2-selection--single'])[3]")
+    public WebElement teslimatPoint;
+    @FindBy(xpath = "//*[text()='Coupon Discount']") public WebElement kupon;
+    @FindBy(xpath = "//*[text()='Coupon Discount']") public WebElement kupon2;
+    @FindBy(xpath = "//tr[@class='order-total']//bdi[1]") public WebElement toplamRakam;
+
+
+
 }

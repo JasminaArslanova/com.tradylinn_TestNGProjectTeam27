@@ -12,6 +12,7 @@ import org.testng.annotations.Test;
 import pages.TradylinnPage;
 import utilities.ConfigReader;
 import utilities.Driver;
+import utilities.ReusableMethods;
 import utilities.TestBaseRapor;
 
 import java.time.Duration;
@@ -26,7 +27,7 @@ public class US003 extends TestBaseRapor {
     WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(500));
 
     public void giris() {
-        extentTest = extentReports.createTest("US_003_TC_01", "Sayfaya giris yapilir");
+        extentTest = extentReports.createTest("EvrenBey_US_003", "Sayfaya giris yapilir");
         Driver.getDriver().get(ConfigReader.getProperty("tradylinnUrl"));
         extentTest.info("Tradylinn Sayfasina Gildi");
         trady.hesabimlinktext.click();
@@ -99,16 +100,16 @@ public class US003 extends TestBaseRapor {
           Urunlerin sepette gorundugu test edilir
          */
         giris();
-        Thread.sleep(2000);
+        ReusableMethods.waitFor(2);
         for (int i = 0; i < 5; i++) {
             js.executeScript("arguments[0].click();", trady.sepeteEkle.get(rnd.nextInt(5)));
         }
         extentTest.info("Rastgele 5 urun sepete eklendi");
         js.executeScript("arguments[0].click();", trady.sepet);
-        Thread.sleep(2000);
+        ReusableMethods.waitFor(2);
         Assert.assertTrue(trady.sepetVisible.isDisplayed());
         extentTest.pass("Urunlerin sepete eklendigi goruldu");
-        Thread.sleep(10000);
+        ReusableMethods.waitFor(10);
     }
 
     @Test
@@ -132,15 +133,15 @@ public class US003 extends TestBaseRapor {
 
         giris();
 
-        //Thread.sleep(2000);
+        //ReusableMethods.waitFor(2);
         //for (int i = 0; i < 5; i++) {
         //    js.executeScript("arguments[0].click();",trady.sepeteEkle.get(rnd.nextInt(5)));
         //}
         //extentTest.info("Rastgele 5 urun sepete eklendi");
         //js.executeScript("arguments[0].click();", trady.sepet);
-        //Thread.sleep(2000);
+        //ReusableMethods.waitFor(2);
         //Assert.assertTrue(trady.sepetVisible.isDisplayed());
-        //Thread.sleep(10000);
+        //ReusableMethods.waitFor(10);
         js.executeScript("arguments[0].click();", trady.sepetiGoruntuleButton);
         Assert.assertTrue(Driver.getDriver().getCurrentUrl().contains("cart"));
         js.executeScript("arguments[0].click();", trady.odemeSayfasiButton);
@@ -166,15 +167,15 @@ public class US003 extends TestBaseRapor {
         Tum adres bilgileri girilir
          */
         giris();
-        //Thread.sleep(2000);
+        //ReusableMethods.waitFor(2);
         //for (int i = 0; i < 5; i++) {
         //    js.executeScript("arguments[0].click();",trady.sepeteEkle.get(rnd.nextInt(5)));
         //}
         //extentTest.info("Rastgele 5 urun sepete eklendi");
         //js.executeScript("arguments[0].click();", trady.sepet);
-        //Thread.sleep(2000);
+        //ReusableMethods.waitFor(2);
         //Assert.assertTrue(trady.sepetVisible.isDisplayed());
-        //Thread.sleep(10000);
+        //ReusableMethods.waitFor(10);
         js.executeScript("arguments[0].click();", trady.sepetiGoruntuleButton);
         Assert.assertTrue(Driver.getDriver().getCurrentUrl().contains("cart"));
         js.executeScript("arguments[0].click();", trady.odemeSayfasiButton);
@@ -191,14 +192,14 @@ public class US003 extends TestBaseRapor {
                 .sendKeys(Keys.TAB).sendKeys(faker.phoneNumber().phoneNumber())
                 .sendKeys(Keys.TAB).sendKeys("tradylinn11@gmail.com").sendKeys(Keys.TAB)
                 .sendKeys(faker.address().secondaryAddress()).perform();
-        Thread.sleep(2000);
+        ReusableMethods.waitFor(2);
         js.executeScript("arguments[0].scrollIntoView(true);", trady.teslimatAdresi);
-        Thread.sleep(2000);
+        ReusableMethods.waitFor(2);
 
     }
 
     @Test
-    public void test05() throws InterruptedException {
+    public void test05() {
         /*
         url` ye gidilir
         Giris yap' a tiklanir
@@ -219,20 +220,26 @@ public class US003 extends TestBaseRapor {
         Tesekkur ederiz siparisiniz alinmistir Yazisinin gorunurlugu test edilir
          */
         giris();
-        Thread.sleep(2000);
+        ReusableMethods.waitFor(2);
         for (int i = 0; i < 5; i++) {
             js.executeScript("arguments[0].click();", trady.sepeteEkle.get(rnd.nextInt(5)));
         }
-        //extentTest.info("Rastgele 5 urun sepete eklendi");
-        Thread.sleep(6000);
+        extentTest.info("Rastgele 5 urun sepete eklendi");
+        ReusableMethods.waitFor(6);
         js.executeScript("arguments[0].click();", trady.sepet);
-        Thread.sleep(2000);
+        extentTest.info("Sepete tiklandi");
+        ReusableMethods.waitFor(2);
         Assert.assertTrue(trady.sepetVisible.isDisplayed());
-        Thread.sleep(10000);
+        extentTest.info("Sepetin gorunurlugu test edildi");
+        ReusableMethods.waitFor(10);
         js.executeScript("arguments[0].click();", trady.sepetiGoruntuleButton);
+        extentTest.info("Sepeti goruntule butonuna tiklandi");
         Assert.assertTrue(Driver.getDriver().getCurrentUrl().contains("cart"));
+        extentTest.info("Sepete gidildigi test edildi");
         js.executeScript("arguments[0].click();", trady.odemeSayfasiButton);
+        extentTest.info("Odeme sayfasi buttonuna tiklandi");
         Assert.assertTrue(trady.faturaDetaylari.isDisplayed());
+        extentTest.info("Fatura detaylari goruntulendi");
         js.executeScript("arguments[0].click();", trady.firstName);
         trady.firstName.clear();
         trady.firstName.sendKeys(faker.name().firstName());
@@ -245,28 +252,36 @@ public class US003 extends TestBaseRapor {
                 .sendKeys(Keys.TAB).sendKeys(faker.phoneNumber().cellPhone())
                 .sendKeys(Keys.TAB).sendKeys("tradylinn11@gmail.com").sendKeys(Keys.TAB)
                 .sendKeys(faker.address().fullAddress()).perform();
-        Thread.sleep(2000);
+        extentTest.info("Faker ile tum bilgiler girildi");
+        ReusableMethods.waitFor(2);
         js.executeScript("arguments[0].scrollIntoView(true);", trady.teslimatAdresi);
-        Thread.sleep(2000);
+        ReusableMethods.waitFor(2);
         try {
             trady.googleOk.click();
         } catch (Exception e) {
             js.executeScript("arguments[0].click();", trady.googleOk);
         }
-        Thread.sleep(60000);
+        ReusableMethods.waitFor(60);
         try {
             trady.teslimatPoint.click();
         } catch (Exception e) {
             js.executeScript("arguments[0].click();", trady.teslimatPoint);
         }
+        extentTest.info("Teslimat tercihi yapildi");
         trady.teslimatPoint.sendKeys("test1"+Keys.ENTER);
 
-        Thread.sleep(8000);
+        ReusableMethods.waitFor(8);
         js.executeScript("arguments[0].click();", trady.teslimatYontemi);
-        Thread.sleep(2000);
-        js.executeScript("arguments[0].click();", trady.siparisiOnayla);
+        ReusableMethods.waitFor(2);
+        try {
+            trady.siparisiOnayla.click();
+        } catch (Exception e) {
+            js.executeScript("arguments[0].click();", trady.siparisiOnayla);
+        }
+        extentTest.info("Siparis onayla butonuna tiklandi");
         wait.until(ExpectedConditions.visibilityOf(trady.thankYouVisible));
         Assert.assertTrue(trady.thankYouVisible.isDisplayed());
+        extentTest.pass("Tesekkur ederiz siparisiniz alinmistir Yazisinin Gorunur Oldugu Test Edildi");
 
     }
 }
