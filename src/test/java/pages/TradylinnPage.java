@@ -192,7 +192,7 @@ public class TradylinnPage {
     @FindBy(xpath="//select[@class='count form-control']") public WebElement dropDownn2;
 
 
-    //195-214 MUSTAFA
+    //195-219 MUSTAFA
 
 
 
@@ -217,7 +217,7 @@ public class TradylinnPage {
 
 
 
-    //215-239 RAMAZAN
+    //220-244 RAMAZAN
 
 
 
@@ -242,7 +242,7 @@ public class TradylinnPage {
 
 
 
-    //240-265 RAMAZAN
+    //245-269 Omer
 
 
 
@@ -267,7 +267,7 @@ public class TradylinnPage {
 
 
 
-    //266-   SEHER
+    //270-   SEHER
 
 
 
